@@ -1,0 +1,8 @@
+subject_index,cond_train,cond_test,subject,test_single_trial_accuracy-mean,test_single_trial_accuracy-ci_lower,test_single_trial_accuracy-ci_upper,test_single_trial_accuracy-ci_minus,test_single_trial_accuracy-ci_plus
+0,overt,covert,PA1,21.666666666666668,16.666666666666668,26.666666666666668,5.0,5.0
+1,overt,covert,PB1,48.333333333333336,40.0,56.666666666666664,8.333333333333336,8.333333333333329
+2,overt,covert,PB2,33.333333333333336,23.333333333333332,40.0,10.000000000000004,6.666666666666664
+3,overt,covert,PB4,20.0,15.0,25.0,5.0,5.0
+4,overt,covert,PC2,30.0,20.0,40.0,10.0,10.0
+5,overt,covert,PC3,20.0,10.0,28.333333333333332,10.0,8.333333333333332
+6,overt,covert,PC4,25.0,15.0,35.0,10.0,10.0

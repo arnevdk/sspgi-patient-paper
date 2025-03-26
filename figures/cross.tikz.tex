@@ -1,0 +1,81 @@
+\sffamily
+\begin{tikzpicture}[trim axis group left]
+
+  \begin{groupplot}[
+    group style={%
+      group size=3 by 1,
+      horizontal sep=10pt,
+      ylabels at=edge left,
+      yticklabels at=edge left,
+    },
+    ybar,
+    ymin=0, ymax=100,
+    ytick={0,20,40,60,80,100},
+    xtick={0,1,2,3,4,5,6},
+    xticklabels={PA1,PB1,PB2,PB4,PC2,PC3,PC4},
+    xtick pos=bottom,
+    ymajorgrids=true,
+    xlabel={subject},
+    ylabel={target selection accuracy (\%)},
+    width=0.33\linewidth-5pt,
+    scale only axis,
+    /pgf/bar width=0.008\linewidth,
+    cycle list/Set2-3,
+    every axis plot/.append style={fill},
+    every axis plot post/.append style={error bars/.cd, error bar style={color=gray}},
+  ]
+
+    \newcommand{\drawBarPlot}[2]{%
+  	  \pgfplotstableread[col sep=comma]{data/cross_results_#1_#2_viz.csv}\datatable
+  	  \addplot+[error bars/.cd, y dir=both, y explicit]
+        table[
+          x=subject_index,
+          y=test_single_trial_accuracy-mean,
+          y error minus=test_single_trial_accuracy-ci_minus,
+          y error plus=test_single_trial_accuracy-ci_plus,
+          col sep=comma
+        ] {\datatable};
+      }
+
+    \newcommand{\drawChanceLevel}{%
+	    \draw[gray, dashed] (axis cs:-1,16.66666667) -- (axis cs:7,16.66666667);
+    }
+
+
+    %% Plot overt
+    \nextgroupplot[title=Overt \ac{vsa} evaluation]
+	  % Bar plot
+    \drawBarPlot{overt}{overt}
+    \drawBarPlot{covert}{overt}
+    \drawBarPlot{free}{overt}
+    % Draw chance level
+    \drawChanceLevel
+
+    %% Plot overt
+
+    \nextgroupplot[title=Covert \ac{vsa} evaluation]
+	  % Bar plot
+    \addlegendimage{empty legend};
+    \addlegendentry{\textbf{Calibration setting}}
+
+    \drawBarPlot{overt}{covert}
+    \addlegendentry{overt \ac{vsa}};
+    \drawBarPlot{covert}{covert}
+    \addlegendentry{covert \ac{vsa}};
+    \drawBarPlot{free}{covert}
+    \addlegendentry{free \ac{vsa}};
+    %% Draw chance level
+    \drawChanceLevel
+
+    %% Plot overt
+    \nextgroupplot[title=Free \ac{vsa} evaluation]
+    % Draw repetition performance
+	  % Bar plot
+    \drawBarPlot{overt}{free}
+    \drawBarPlot{covert}{free}
+    \drawBarPlot{free}{free}
+    %% Draw chance level
+    \drawChanceLevel
+
+  \end{groupplot}
+\end{tikzpicture}%

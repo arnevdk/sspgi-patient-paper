@@ -26,8 +26,6 @@
 \newcommand{\noskill}{{\color{gdvOrange}{$\boldsymbol{-}$}}}
 \newcommand{\snoskill}{{\color{gdvRed}{$\boldsymbol{/}$}}}
 
-\newcommand*\elide{\textup{[\,\dots]}}
-
 % Layout
 \setuptodonotes{inline}
 \usepackage[font=small]{caption}
@@ -36,6 +34,7 @@
 \pgfplotsset{every axis label/.append style={font=\footnotesize}}
 \pgfplotsset{every axis legend/.append style={font=\footnotesize}}
 
+\renewcommand*{\bibfont}{\footnotesize}
 
 
 % Preabmle
@@ -53,12 +52,16 @@ Marc M. Van Hulle,
 François Cabestaing
 }
 
-\title{Visual ERP-based Brain-Computer Interfaces in patients
-with severe physical, speech and eye movement impairment: case studies}
+\title{Case studies on visual ERP-based Brain-Computer Interface use by
+individuals with severe physical, speech and eye movement impairment}
 
 \begin{document}
 
 \maketitle
+
+\begin{abstract}
+  \todo{abstract}
+\end{abstract}
 
 \section{Introduction}
 
@@ -165,6 +168,12 @@ The objectives of this study are as follows:
   \item verify if this performance can be improved with a suitable decoding
     strategy.
 \end{enumerate*}
+
+\begin{table}
+  \footnotesize
+  \printacronyms[template=tabular, heading=none]
+  \caption{List of acronyms.}
+\end{table}
 
 
 \section{Materials \& methods}
@@ -428,11 +437,11 @@ needed aspiration of their tracheostomy.
   \resizebox{\linewidth}{!}{%
     \import{figures}{fig_gaze.pgf}%
   }%
-  \caption[Distribution of the recorded gaze position.]{%
+  \caption{%
     Distribution of the recorded gaze position during the experimental session in the three \ac{vsa}
     conditions.
-    Crosshairs represent stimulus positions, with the orange ones cued during
-    the given condition.
+    Crosshairs represent stimulus positions, with positions cued during
+    the given condition indicated in red.
     Subjects PB2 and PC4 preferred covert \ac{bci} operation, with PB2 resting gaze
     near the middle of the screen, and PC4 near the bottom.
   }%
@@ -473,41 +482,27 @@ stimuli.
 
 \Cref{fig:patients/decode} shows cross-validated single-trial target selection
 accuracy for the evaluated \ac{vsa} settings for the different decoders.
-\todo{replace by accuracy}
+Accuracy results do not reveal a clear trend in classifier performance per
+condition.
+In the covert \ac{vsa} setting with cued central gaze fixation, performance
+deteriorated overall.
+Decoding performance for this task was at chance level ($\frac{1}{6}$) for
+participants PB4, PC2 and PC3.
 
-In the overt \ac{vsa} setting, the evaluated decoders performed similarly on average
-(\ac{wcble} 75.58\%, XDAWNCov+TS+LDA 74.24\%, \ac{tlda} 75.99\%).
-In the covert \ac{vsa} setting with cued central gaze fixation, performance deteriorated,
-but \ac{wcble} significantly improved performance over the base classifier
-\ac{tlda} in this condition
-(\ac{wcble} 62.49\%, XDAWNCov+TS+LDA 59.42\%, \ac{tlda} 59.05\%).
-Decoding performance for this task was at chance level for participants PB4 and
-PC3.
-\todo{replace values by accuracy}
-
-However, \ac{wcble} did not improve \ac{tlda} performance in the free \ac{vsa} setting, but
+\Ac{wcble} did not improve \ac{tlda} performance in the free \ac{vsa} setting, but
 XDAWNCov+TS+LDA performance was slightly lower here (though not
 significantly).
-(\ac{wcble} 74.15\%, XDAWNCov+TS+LDA 71.88\%, \ac{tlda} 74.27\%).
 More interestingly, we noticed that performances of the decoders in free
 \ac{vsa} were close to those in the overt \ac{vsa}.
 A substantial decrease in performance from the overt setting to the free
-setting was observed for subjects PC3
-(\ac{wcble}: 70.31>62.14 \%, XDAWNCov+TS+LDA: 65.78>62.18 \%, \ac{tlda}:
-70.49>63.76 \%)
-and PC4
-(\ac{wcble}: 65.56>55.71 \%, XDAWNCov+TS+LDA: 62.02>54.24 \%, \ac{tlda}:
-66.12>57.08 \%).
-For PB2, who also relied on covert \ac{vsa} during the uncued free \ac{vsa}
+setting was observed for subjects PC2, PC3 and PC4 who had the most severe eye
+motor impairment.\todo{quantify numbers}. Of these, PC
+For PB2, who relied on covert \ac{vsa} during the uncued free \ac{vsa}
 according to gaze tracking setting, the decrease in performance was also
-present, but not as substantial
-(\ac{wcble}: 82.76>78.88 \%, XDAWNCov+TS+LDA: 80.74>77.99 \%, \ac{tlda}:
-83.21>78.84 \%).
+present.\todo{quantify}
 \begin{figure*}[t]
    \input{figures/decode.tikz.tex}
-  \caption[%
-    Decoding performance in different \acs{vsa} settings.
-  ]{%
+  \caption{%
     Decoding performance in different \ac{vsa} settings reported as
     single-trial target selection accuracy (\%).
     Free \ac{vsa} is generally on par with performance in the overt \ac{vsa}
@@ -515,28 +510,28 @@ present, but not as substantial
     Performance in the covert \ac{vsa} setting with central gaze fixation is lower, but can
     be improved with the \ac{wcble} decoder.
     95\% confidence intervals were calculated using 10,000 bootstrapping
-    repetitions.
+    repetitions. Dashed line indicates the chance level accuracy
+    ($\frac{1}{6}$).
   }
   \label{fig:patients/decode}
 \end{figure*}
+\todo{add repetitions to legend}
 
 \subsection{Cross-condition calibration}
 \label{sec:patients/outcomes/cross}
-\todo{replace fig with accuracy, check if description fits}
 
 As an alternative approach to selecting the most suitable decoder, we used
 \ac{tlda} as the base decoder and verified whether performance could be improved
 if \ac{bci} users with gaze impairment performed the calibration session relying
 maximally on their residual gaze control.
 
-\Cref{fig:patients/cross} shows that, on average, covert \ac{vsa} decoding
+\Cref{fig:patients/cross} shows that for participants PB1 and PC2 covert \ac{vsa} decoding
 improved when training with overt \ac{vsa}.
-This was especially true for participants PA1, PB2, and PC3.
-Note that, according to eye tracking data, participants PB1, PB4, and PC4 did not
+Note that, according to eye tracking data, participant PB1, PB4, and PC4 did not
 always perform cued central gaze fixation in the covert \ac{vsa} setting,
 which might have affected the results.
 \begin{figure*}[t]
-  \input{figures/fig_cross.pgf}
+  \input{figures/cross.tikz.tex}
   \caption[Cross-setting calibration and decoding performance.]{
     Decoding performance when calibrating the \ac{tlda} decoder in a given \ac{vsa}
     setting, and evaluating it in another, reported as
@@ -550,20 +545,21 @@ which might have affected the results.
 \end{figure*}
 
 \section{Discussion}
+\todo{Check that discussion still follows from results}
 
 \todo{Add a short section to emphasize on the main results (head of the
 different parts of the discussion)}
 
 \subsection{Gaze-independent operation \& decoding}
-Due to the heterogeneous nature of the participants' conditions, it is difficult to
-draw general conclusions.
+Due to the heterogeneous nature of the participants' conditions and the limited
+number of participants, it is difficult to draw general conclusions.
 This study should therefore be seen as a collection of case studies,
 highlighting different obstacles encountered in developing gaze-independent
 visual oddball \acp{bci} for individuals with \ac{sspgi}.
 Nevertheless, we would like to highlight some aspects that might be
 of interest for the further development of this class of \acp{bci}.
 
-True gaze-independent visual \acp{bci} should not rely on gaze fixation.
+True \emph{gaze-independent} visual \acp{bci} should not rely on gaze fixation.
 Hence, our analysis centers around the free \ac{vsa} condition.
 Eye tracking results presented in \cref{sec:patients/outcomes/gaze}\todo{fix
 ref}
@@ -572,7 +568,7 @@ occur in individuals with \ac{sspgi}.
 We also confirmed part of the results from~\textcite{VanDenKerchove2024}
 presented in \cref{sec:covert-align}, which state that decoding of covert \ac{vsa} with central gaze
 fixation can be improved by accounting for latency jitter. We showed that this
-also holds for individuals with \ac{sspgi}.
+also holds for some individuals with \ac{sspgi}, with PA1 and PC4 as examples.
 
 Contrary to our assumptions, we have shown that this does not
 necessarily improve covert \ac{vsa} when gaze fixation is not cued.
@@ -606,8 +602,8 @@ solutions developed with central fixation in mind.
 Individuals with all but the most severe gaze impairments will likely retain
 some degree of gaze direction in visual \ac{bci} operation, which can
 drastically boost performance.
-Subject PB2 exemplifies this: his free \ac{vsa} performance is on par with his
-overt \ac{vsa} performance, although eye tracking showed that he relied mostly
+Subject PB2 exemplifies this: his free \ac{vsa} performance is above the covert
+\ac{vsa} performance, and eye tracking showed that he relied mostly
 on overt \ac{vsa} when cued to do so, and mostly on covert \ac{vsa} when
 gaze was uncued.
 This is also supported by our results on cross-condition calibration presented

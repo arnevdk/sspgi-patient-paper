@@ -9,14 +9,14 @@
       yticklabels at=edge left,
     },
     ybar,
-    ymin=0,
-    ymax=100,
+    ymin=0, ymax=105,
+    ytick={0,20,40,60,80,100},
+    xtick={0,1,2,3,4,5,6},
     xticklabels={PA1,PB1,PB2,PB4,PC2,PC3,PC4},
-    xtick=data,
     xtick pos=bottom,
     ymajorgrids=true,
     xlabel={subject},
-    ylabel={single trial accuracy (\%)},
+    ylabel={target selection accuracy (\%)},
     width=0.33\linewidth-5pt,
     scale only axis,
     /pgf/bar width=0.008\linewidth,
@@ -25,44 +25,88 @@
     every axis plot post/.append style={error bars/.cd, error bar style={color=gray}},
   ]
 
+    \newcommand{\drawBarPlot}[2]{%
+  	  \pgfplotstableread[col sep=comma]{data/decode_results_#1_#2_viz.csv}\datatable
+  	  \addplot+[error bars/.cd, y dir=both, y explicit]
+        table[
+          x=subject_index,
+          y=test_single_trial_accuracy-mean,
+          y error minus=test_single_trial_accuracy-ci_minus,
+          y error plus=test_single_trial_accuracy-ci_plus,
+          col sep=comma
+        ] {\datatable};
+      }
+
+    \newcommand{\drawRepMarker}[5]{%
+  	  \pgfplotstableread[col sep=comma]{data/decode_results_#1_#2_viz.csv}\datatable
+      \addplot+[only marks, mark=#5, mark size=2pt]
+        table[
+          x expr=\thisrow{subject_index} + #4,
+          y=test_accuracy_reps_#3-mean,
+          col sep=comma
+        ] {\datatable};
+
+    }
+
+    \newcommand{\drawChanceLevel}{%
+	    \draw[gray, dashed] (axis cs:-1,16.66666667) -- (axis cs:7,16.66666667);
+    }
+
+    \newcommand{\offset}{0.3}
+
     %% Plot overt
     \nextgroupplot[title=Overt \ac{vsa}]
+    % Draw repetition performance
+    \drawRepMarker{overt}{WCBLE}{5}{-\offset}{diamond}
+    \drawRepMarker{overt}{tLDA}{5}{0}{diamond}
+    \drawRepMarker{overt}{XDAWNCov+TS+LDA}{5}{\offset}{diamond}
+    \drawRepMarker{overt}{WCBLE}{10}{-\offset}{square}
+    \drawRepMarker{overt}{tLDA}{10}{0}{square}
+    \drawRepMarker{overt}{XDAWNCov+TS+LDA}{10}{\offset}{square}
 	  % Bar plot
-  	\pgfplotstableread[col sep=comma]{data/decode_results_overt_WCBLE_viz.csv}\datatable
-  	\addplot+ [error bars/.cd, y dir=both, y explicit] table[x=subject_index, y=mean, y error minus =ci_minus, y error plus=ci_plus,col sep=comma] {\datatable};
-  	\pgfplotstableread[col sep=comma]{data/decode_results_overt_tLDA_viz.csv}\datatable
-  	\addplot+ [error bars/.cd, y dir=both, y explicit] table[x=subject_index, y=mean, y error minus =ci_minus, y error plus=ci_plus,col sep=comma] {\datatable};
-  	\pgfplotstableread[col sep=comma]{data/decode_results_overt_XDAWNCov+TS+LDA_viz.csv}\datatable
-  	\addplot+ [error bars/.cd, y dir=both, y explicit] table[x=subject_index, y=mean, y error minus =ci_minus, y error plus=ci_plus,col sep=comma] {\datatable};
+    \drawBarPlot{overt}{WCBLE}
+    \drawBarPlot{overt}{tLDA}
+    \drawBarPlot{overt}{XDAWNCov+TS+LDA}
     % Draw chance level
-	  \draw[gray, dashed] (axis cs:-1,16.66666667) -- (axis cs:7,16.66666667);
+    \drawChanceLevel
 
-    %% Plot covert
+    %% Plot overt
     \nextgroupplot[title=Covert \ac{vsa}]
 	  % Bar plot
-  	\pgfplotstableread[col sep=comma]{data/decode_results_covert_WCBLE_viz.csv}\datatable
-  	\addplot+ [error bars/.cd, y dir=both, y explicit] table[x=subject_index, y=mean, y error minus =ci_minus, y error plus=ci_plus,col sep=comma] {\datatable};
+    \addlegendimage{empty legend};
+    \addlegendentry{\textbf{Decoder}};
+    \drawBarPlot{covert}{WCBLE}
   	\addlegendentry{WCBLE};
-  	\pgfplotstableread[col sep=comma]{data/decode_results_covert_tLDA_viz.csv}\datatable
-  	\addplot+ [error bars/.cd, y dir=both, y explicit] table[x=subject_index, y=mean, y error minus =ci_minus, y error plus=ci_plus,col sep=comma] {\datatable};
+    \drawBarPlot{covert}{tLDA}
   	\addlegendentry{tLDA};
-  	\pgfplotstableread[col sep=comma]{data/decode_results_covert_XDAWNCov+TS+LDA_viz.csv}\datatable
-  	\addplot+ [error bars/.cd, y dir=both, y explicit] table[x=subject_index, y=mean, y error minus =ci_minus, y error plus=ci_plus,col sep=comma] {\datatable};
+    \drawBarPlot{covert}{XDAWNCov+TS+LDA}
   	\addlegendentry{XDAWNCov+TS+LDA};
-    % Draw chance level
-	  \draw[gray, dashed] (axis cs:-1,16.66666667) -- (axis cs:7,16.66666667);
+    % Draw repetition performance
+    \drawRepMarker{covert}{WCBLE}{5}{-\offset}{diamond}
+    \drawRepMarker{covert}{tLDA}{5}{0}{diamond}
+    \drawRepMarker{covert}{XDAWNCov+TS+LDA}{5}{\offset}{diamond}
+    \drawRepMarker{covert}{WCBLE}{10}{-\offset}{square}
+    \drawRepMarker{covert}{tLDA}{10}{0}{square}
+    \drawRepMarker{covert}{XDAWNCov+TS+LDA}{10}{\offset}{square}
+    %% Draw chance level
+    \drawChanceLevel
 
-    %% Plot free
+    %% Plot overt
     \nextgroupplot[title=Free \ac{vsa}]
+    % Draw repetition performance
+    \drawRepMarker{free}{WCBLE}{5}{-\offset}{diamond}
+    \drawRepMarker{free}{tLDA}{5}{0}{diamond}
+    \drawRepMarker{free}{XDAWNCov+TS+LDA}{5}{\offset}{diamond}
+    \drawRepMarker{free}{WCBLE}{10}{-\offset}{square}
+    \drawRepMarker{free}{tLDA}{10}{0}{square}
+    \drawRepMarker{free}{XDAWNCov+TS+LDA}{10}{\offset}{square}
+
 	  % Bar plot
-  	\pgfplotstableread[col sep=comma]{data/decode_results_free_WCBLE_viz.csv}\datatable
-  	\addplot+ [error bars/.cd, y dir=both, y explicit] table[x=subject_index, y=mean, y error minus =ci_minus, y error plus=ci_plus,col sep=comma] {\datatable};
-  	\pgfplotstableread[col sep=comma]{data/decode_results_free_tLDA_viz.csv}\datatable
-  	\addplot+ [error bars/.cd, y dir=both, y explicit] table[x=subject_index, y=mean, y error minus =ci_minus, y error plus=ci_plus,col sep=comma] {\datatable};
-  	\pgfplotstableread[col sep=comma]{data/decode_results_free_XDAWNCov+TS+LDA_viz.csv}\datatable
-  	\addplot+ [error bars/.cd, y dir=both, y explicit] table[x=subject_index, y=mean, y error minus =ci_minus, y error plus=ci_plus,col sep=comma] {\datatable};
-    % Draw chance level
-	  \draw[gray, dashed] (axis cs:-1,16.66666667) -- (axis cs:7,16.66666667);
+    \drawBarPlot{free}{WCBLE}
+    \drawBarPlot{free}{tLDA}
+    \drawBarPlot{free}{XDAWNCov+TS+LDA}
+    %% Draw chance level
+    \drawChanceLevel
 
   \end{groupplot}
 \end{tikzpicture}%
