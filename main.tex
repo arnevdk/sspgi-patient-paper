@@ -37,7 +37,7 @@
 \renewcommand*{\bibfont}{\footnotesize}
 
 
-% Preabmle
+% Preamble
 \input{acronyms.tex}
 \addbibresource{references.bib}
 
@@ -60,22 +60,36 @@ individuals with severe physical, speech and eye movement impairment}
 \maketitle
 
 \begin{abstract}
-  \todo{abstract}
+  Individuals with \ac{sspgi} face significant challenges in communication and
+  daily interaction. Visual \acp{bci} offer a potential assistive solution, but
+  their usability is limited by eye motor impairments that affect gaze fixation
+  and \ac{vsa}.
+  This study investigates the feasibility of a gaze-independent visual oddball
+  \ac{bci} for individuals with \ac{sspgi}.
+  Seven participants with varying degrees of eye motor impairments were
+  recruited and \ac{bci} decoding performance evaluated under three conditions:
+  overt, covert, and free \ac{vsa} using multiple classification methods.
+  Results confirm that covert \ac{vsa} with central fixation leads to decreased
+  performance, whereas uncued \ac{vsa} is comparable to overt VSA in some
+  participants.
+  Furthermore, cross-condition calibration and evaluation suggests that training
+  with overt \ac{vsa} may improve performance in gaze-impaired individuals.
+  These findings highlight the need for adaptive decoding strategies and further
+  validation in applied settings.
 \end{abstract}
 
+\acresetall
 \section{Introduction}
-
 Severe neurological conditions, such as severe acquired brain lesions,
-neuromuscular disorders or amyotrophic lateral sclerosis can result in
+neuromuscular disorders or \ac{als} can result in
 \ac{sspi}.
-This in turn highly alters an individual's ability to communicate and interact
-with their environment, which reduces the level of activity and participation,
+This, in turn, significantly alters an individual's ability to communicate and interact
+with their environment, reducing the level of activity and participation,
 and overall quality of life.
 \Ac{aac} technology leveraging visual \acp{bci},
 which relies on the interpretation of visual stimuli by the user,
 offers several advantages in this context.
-Visual \acp{bci} can work with non-invasive recording technology and can use rapid
-stimulation.
+Visual \acp{bci} operate with non-invasive recording technology and utilize rapid stimulation.
 This makes them well-suited for real-time communication tasks.
 
 However, severe visual impairments such as nystagmus (uncontrolled eye movements), diplopia (double
@@ -85,7 +99,7 @@ These impairments make it difficult for
 \ac{bci} users to track or focus on track visual stimuli accurately, reducing their
 performance with BCIs that rely on visual cues~\cite{McCane2014,FriedOken2020,Pasqualotto2015}.
 Unfortunately, it is again for this group that eye tracking solutions also
-perform poorly, making them more reliant on potential developments in \ac{bci}
+perform poorly, making them more reliant on potential developments in \acp{bci}
 that do not rely on eye gaze.
 
 Eye motor impairments are presumed to reduce performance in operating visual
@@ -97,14 +111,12 @@ This is usually circumvented by designing gaze-independent~
 These interfaces either avoid visual stimulation or exploit some form of
 covert \ac{vsa}, where gaze and \ac{vsa} do not coincide.
 
-Several studies with visual oddball \acp{bci} show that performance drops when not fixating the intended
-target~\cite{Brunner2010, Treder2010, RonAngevin2019}, necessitating
-gaze-in\-de\-pen\-dent solutions.
+Several studies on visual oddball \acp{bci} indicate that performance declines without fixation on the intended target~\cite{Brunner2010, Treder2010, RonAngevin2019}, necessitating gaze-independent solutions.
 These studies build on the assumption that \ac{bci} users with \ac{sspgi}
 would feel comfortable operating an interface in pure covert \ac{vsa} with
 central fixation.
-One could argue that a \ac{bci} that is only verified to work when central
-fixation is maintained could also be considered gaze-dependent.
+One could argue that a \ac{bci} verified to work only with central fixation could
+also be considered gaze-dependent.
 This does not account for the residual eye motor capabilities of most people
 with \ac{sspi}, the (dis)comfort they experience while
 performing gaze fixation and other confounding factors resulting from their eye
@@ -122,7 +134,7 @@ More recently, \textcite{Peters2020} performed a trial with two
 participants with late-stage \ac{als} with severe visual impairment.
 Their \ac{ssvep} interface was not optimized for gaze-independence, but the
 system showed high accuracy, outperforming an eye tracking alternative.
-It would be of interest to verify if such results can be replicated with
+It would be of interest to determine whether such results can be replicated with
 participants with other conditions, and with a visual oddball \acp{bci}.
 
 \textcite{Orhan2012} and \textcite{Oken2014} tested the \ac{rsvp} speller with
@@ -148,9 +160,8 @@ using a suited decoding strategy that corrects for latency jitter in covert \ac{
 Yet, there is a strong need for verification of these results in an applied
 setting with people with \ac{sspi}.
 
-Eventually, the end goal of this research line is to develop
-gaze-independent \ac{bci} for people that are fully locked-in and have no option
-left other than a \ac{bci}.
+Ultimately, this research aims to develop gaze-independent \ac{bci} for
+individuals who are fully locked-in and have no alternative means of communication.
 However, this group is very small and it is often challenging to recruit them
 into a study and perform experiments~\cite{Wolpaw2006}.
 Individuals with less severe paralysis or in less progressed disease stages that struggle with
@@ -160,7 +171,7 @@ Therefore, we aim to apply the concepts from earlier work and literature to
 people with \ac{sspi} and various degrees of motor impairment in a visual oddball
 \ac{bci}.
 The objectives of this study are as follows:
-\begin{enumerate*}
+\begin{enumerate*}[label={(\arabic*)}]
   \item Explore the capabilities and experienced comfort of individuals with
     \ac{sspgi} when operating a visual \ac{bci},
   \item evaluate the performance of a gaze-independent visual \ac{bci} for this
@@ -187,7 +198,7 @@ patient anonymity, since it reveals where they live? Option A: a specialized car
 home (France), Option B: Fondation Partage et Vie (Loos, France), Option C: a
 specialized care home (Loos, France)}
 Ethical approval for this multi-center study was obtained from the Ethics
-Comission of the University Hospital Leuven (S62547).
+Commission of the University Hospital Leuven (S62547).
 Experiments were performed under the supervision of the treating physician.
 
 In order to be recruited, participants must:
@@ -249,14 +260,14 @@ diagnoses.
 
 \subsection{Visual skills and eye tracking and eye motor examination}
 
-Vision was assessed using a LogMAR chart~\cite{Bailey1976}.
+Vision was assessed using a logMAR chart~\cite{Bailey1976}.
 Self-reported eye motor and visual abnormalities were recorded according to the
 relevant visual \ac{bci} skills presented by~\textcite{FriedOken2020}.
 These include visual acuity, visual fixation, eyelid function, ocular motility,
 binocular vision, and field of vision.
 Additionally, participants and their caregivers were asked about eye tremors
 (nystagmus or other) and other involuntary eye movements.
-\todo{replace with neuro-ophtalmolocigal examination}
+\todo{replace with neuro-ophthalmolocigal examination}
 
 %As an objective metric, we implemented and performed the automated NeuroEye eye movement
 %test proposed by~\textcite{Hassan2022} using calibration-free eye tracking to
@@ -289,8 +300,8 @@ Similar to this study, the task consists of counting the flashes of a cued
 target among 6 round, flashing targets laid out in a hexagonal pattern in the
 field of view of the user as displayed
 in~\cref{fig:methods/stimulation/stimulation}.
-We refer to \textcite{VanDenKerchove2024} for further implementation details of
-the stimulation procedure.
+We refer to \textcite{VanDenKerchove2024} for further details on the implementation
+of the stimulation procedure.
 \begin{figure*}[t]
   \centering
   \begin{subfigure}[b]{.41\textwidth}
@@ -317,7 +328,7 @@ the stimulation procedure.
     \end{subfigure}\hfill%
      \begin{subfigure}[b]{.45\linewidth}
       \includegraphics[width=\textwidth]{figures/stim_intense.pdf}
-      \caption{Targets are intesified by enlarging them for 100 ms.}
+      \caption{Targets are intensified by enlarging them for 100 ms.}
     \end{subfigure}
   \end{minipage}
 
@@ -343,8 +354,7 @@ by~\textcite{VanDenKerchove2024} was not studied here, as we were interested
 in natural \ac{vsa} operation settings for gaze-impaired individuals.
 
 To make the interface suitable for use by individuals with
-\ac{sspi}~\cite{FriedOken2020}, the
-number of blocks was decreased to 6 per \ac{vsa} setting.
+\ac{sspi}~\cite{FriedOken2020}, the amount of blocks was reduced to 6 per \ac{vsa} setting.
 In order to decrease task difficulty, \ac{isi} was increased to 200 with added random jitter uniformly distributed
 between -50 ms and 50 ms.
 The experiment also started with a training block in each condition, where the
@@ -422,10 +432,9 @@ Participant PC4 had one deviated eye with a corneal abscess affecting the motili
 and vision in the right eye, and reducing motility in the left.
 
 
-Given these information, we aimed to shed more light on the actual capabilities of individuals
-with \ac{sspgi} regarding performing overt \ac{vsa} and central gaze
-fixation, as well as to investigate how relevant these two settings are when the
-gaze is not cued.
+Given this information, we aimed to clarify the capabilities of individuals
+with \acp{sspgi} in performing overt \ac{vsa} and central gaze fixation and to
+assess the relevance of these settings when gaze is not cued.
 \Cref{fig:patients/gaze} maps gaze position relative to the stimuli
 across conditions.
 These results should be interpreted with care, as the eye tracker partially
@@ -496,10 +505,10 @@ More interestingly, we noticed that performances of the decoders in free
 \ac{vsa} were close to those in the overt \ac{vsa}.
 A substantial decrease in performance from the overt setting to the free
 setting was observed for subjects PC2, PC3 and PC4 who had the most severe eye
-motor impairment.\todo{quantify numbers}. Of these, PC
+motor impairment. Of these, PC
 For PB2, who relied on covert \ac{vsa} during the uncued free \ac{vsa}
 according to gaze tracking setting, the decrease in performance was also
-present.\todo{quantify}
+present.
 \begin{figure*}[t]
    \input{figures/decode.tikz.tex}
   \caption{%
@@ -510,12 +519,14 @@ present.\todo{quantify}
     Performance in the covert \ac{vsa} setting with central gaze fixation is lower, but can
     be improved with the \ac{wcble} decoder.
     95\% confidence intervals were calculated using 10,000 bootstrapping
-    repetitions. Dashed line indicates the chance level accuracy
+    repetitions. Dashed line indicates the chance level accuracy. Diamond
+    markers indicate target selection accuracy using the median score for five stimulation
+    repetitions. Square markers indicate target selection accuracy for 10
+    stimulation repetitions.
     ($\frac{1}{6}$).
   }
   \label{fig:patients/decode}
 \end{figure*}
-\todo{add repetitions to legend}
 
 \subsection{Cross-condition calibration}
 \label{sec:patients/outcomes/cross}
@@ -545,10 +556,20 @@ which might have affected the results.
 \end{figure*}
 
 \section{Discussion}
-\todo{Check that discussion still follows from results}
 
-\todo{Add a short section to emphasize on the main results (head of the
-different parts of the discussion)}
+This study investigated the feasibility of a gaze-independent visual oddball
+\acp{bci} for individuals with \ac{sspgi}.
+While covert \ac{vsa} with cued, central gaze fixation resulted in reduced BCI
+performance, likely due to increased task load, accuracy in free \ac{vsa} where gaze position is uncued can
+yield performance comparable to explicitly cued overt \ac{VSA} for some
+participants.
+This suggests that the evaluated participants naturally integrate residual gaze control.
+Training with cued, overt \ac{vsa} can improve subsequent performance in covert or free VSA conditions,
+highlighting the potential benefits of leveraging this residual eye motor control
+during calibration.
+While gaze-independent BCIs show promise for individuals with \emph{sspgi},
+usability and comfort remain critical considerations for real-world applications.
+These results provide important insights into the optimization of visual BCIs for individuals with severe motor impairments and underscore the need for further research into adaptive decoding strategies and user-centered design.
 
 \subsection{Gaze-independent operation \& decoding}
 Due to the heterogeneous nature of the participants' conditions and the limited
@@ -639,7 +660,8 @@ information transfer rate of visual \acp{bci}.
 Furthermore, our experimentation revealed that the required technology and its
 potential applications were generally well received by the participants and their
 environment.
-While the necessary visual attention task can be taxing if performed for longer
+While the necessary visual attention task can be taxing if performed for
+extended
 periods of time, participants indicated that this was outweighed by the
 potential to communicate in a more automated and autonomous way compared to
 their current \ac{aac} solutions, which often required the help of a trained caregiver of a trained
@@ -647,10 +669,7 @@ caregiver.
 
 \subsection{Limitations}
 
-Despite results that prompt interesting reflections on gaze-independent \ac{bci}
-approaches, there are some limitations to the presented results that should be
-addressed in ongoing and future work.
-
+Despite the insights gained on gaze-independent \ac{bci} approaches, certain limitations must be addressed in future research.
 First and foremost, this study works with a limited sample size, which
 does not represent the full spectrum of individuals with \ac{sspi} and
 \ac{sspgi}, and their specific symptoms and skills.
@@ -677,7 +696,7 @@ measured.
 Instead, it was assumed that participants operated most comfortably in the free
 \ac{vsa} condition.
 Even though participants reported that they could comfortably operate the
-system, this must be confirmed with more quantitative assesments.
+system, this must be confirmed with more quantitative assessments.
 To properly contextualize performance results, they should be coupled with
 metrics evaluating the full scope of the user's requirements, with measures of
 usability, comfort and perceived effort, like the NASA Task Load
@@ -701,8 +720,27 @@ An interface that aims to maximize \ac{itr} could necessitate more or faster
 gaze redirections, which might result in different conclusions regarding the
 comfort and the impact of visual skill.
 
+\acresetall
 \section{Conclusion}
-\todo{Add conclusion, base on summarizing and conclusions in thesis}
+  This study explored the usability of gaze-independent visual BCIs in
+  individuals with \ac{sspgi}, focusing on the impact of eye motor impairments
+  on performance.
+  Our results demonstrate that a visual \ac{bci} gaze-independent operation is feasible
+  for some of these individuals.
+  They might either achieve sufficient decoding accuracy despite their eye
+  motor impairment, or performance can be enhanced by careful, individual
+  adaptation the decoding strategies.
+  The free \ac{vsa} condition yielded performance comparable to overt VSA in some participants, suggesting that users may naturally integrate residual gaze control.
+  Additionally, training under overt \ac{vsa} conditions improved performance in
+  subsequent covert or free \ac{vsa} operation, highlighting the potential benefits of
+  leveraging residual eye motor capabilities during calibration.
+  While these findings are promising, future work should include larger
+  participant groups, refine stimulation paradigms, and incorporate
+  user-centered assessments of comfort and usability.
+  Ultimately, optimizing gaze-independent BCI designs could enhance communication
+  options for individuals with severe motor and speech impairments, particularly
+  those who struggle with conventional eye-tracking technologies.
+
 \printbibliography
 
 \end{document}
