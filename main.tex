@@ -1,6 +1,6 @@
-\documentclass[twocolumn]{article}
+\documentclass{article}
 \usepackage{acro}
-\usepackage[backend=biber]{biblatex}
+\usepackage[backend=biber,style=vancouver]{biblatex}
 \usepackage[inline]{enumitem}
 \usepackage{amsmath}
 \usepackage{cleveref}
@@ -14,6 +14,7 @@
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
 \usepackage{tabularx}
+\usepackage{authblk}
 
 \usepgfplotslibrary{groupplots}
 \usepgfplotslibrary{colorbrewer}
@@ -28,8 +29,8 @@
 \newcommand{\snoskill}{{\color{gdvRed}{$\pmb{/}$}}}
 
 % Layout
-\setuptodonotes{inline}
 \usepackage[font=small]{caption}
+\renewcommand\Affilfont{\small}
 
 \pgfplotsset{every tick label/.append style={font=\footnotesize}}
 \pgfplotsset{every axis label/.append style={font=\footnotesize}}
@@ -37,56 +38,132 @@
 
 \renewcommand*{\bibfont}{\footnotesize}
 
+\renewcommand{\maketitle}{
+	\begin{flushleft}
+		{\LARGE \@title \par}
+		\vskip 1em
+		\@author
+		\vskip 1em
+			{\large \@date \par}
+	\end{flushleft}
+}
+\makeatletter
+
+% Left-align abstract heading and content
+\renewenvironment{abstract}{
+	\begin{justify}
+		\textbf{Abstract}\\
+		}{
+	\end{justify}
+}
+
+
+% Draft
+\usepackage{setspace}
+\doublespacing
+\usepackage{lineno}
+\linenumbers
 
 % Preamble
 \input{acronyms.tex}
 \addbibresource{references.bib}
 
-\author{
-	Arne Van Den Kerchove,
-	Juliette Meunier,
-	Marie de Moura, \\
-	Alixe Willemssens,
-	Hakim Si-Mohammed,
-	Etienne Allart, \\
-	François Cabestaing
-	Marc M. Van Hulle
+\author[1,2,*]{Arne Van Den Kerchove}
+\author[2]{Juliette Meunier}
+\author[3]{Marie de Moura}
+\author[4]{Alixe Willemssens}
+\author[2]{Hakim Si-Mohammed}
+\author[2]{François Cabestaing}
+\author[5]{Etienne Allart}
+\author[1]{Marc M. Van Hulle}
+
+\affil[1]{%
+	KU Leuven,
+	Leuven Brain Institute,
+	Leuven.AI,
+	Department of Neurosciences,
+	Laboratory for Neuro- and Psychophysiology,
+	Campus Gasthuisberg O\&N2,
+	Herestraat 49 bus 1021,
+	BE-3000 Leuven,
+	Belgium
+}
+\affil[2]{%
+	Univ. Lille, CNRS, Centrale Lille,
+	UMR 9189 CRIStAL,
+	Bâtiment ESPRIT,
+	Avenue Henri Poincaré,
+	F-59655 Villeneuve d'Ascq,
+	France
+}
+\affil[3]{%
+	Fondation Partage et Vie,
+	24 Rue des Fleurs,
+	F-59120 Loos,
+	France
+}
+\affil[4]{
+	TRAINM Neuro Rehab Clinics,
+	Quellinstraat 38,
+	BE-2018 Antwerp,
+	Belgium
+}
+\affil[5]{
+	CHU de Lille,
+	Service de Rééducation Neurologique Cérébrolésion,
+	Université de Lille, UFR3S médecine,
+	Lille Neuroscience and Cognition,
+	Hôpital Swynghedauw,
+	Rue André Verhaeghe,
+	F-59000 Lille
+}
+\affil[*]{\texttt{arne.vandenkerchove@kuleuven.be}}
+
+\title{
+	Visual ERP-based brain-computer interface use by
+	individuals with severe speech, physical, speech and eye movement impairments:
+	case studies
 }
 
-\title{Case studies on visual ERP-based brain-computer interface use by
-	individuals with severe speech, physical, speech and eye movement impairments}
-
 \begin{document}
+
 \maketitle
 
-
-
-
-
-
-
 \begin{abstract}
+	\noindent
+	\emph{Background:}
 	Individuals with severe speech and physical impairment face significant challenges in
 	communication and	daily interaction.
 	Visual \acp{bci} offer a potential assistive solution, but their usability is
 	limited when facing eye motor impairments that affect gaze fixation
 	and \ac{vsa}.
 	This study investigates the feasibility of a gaze-independent visual oddball
-	\ac{bci} for individuals with \ac{sspgi}.
+	\ac{bci} for individuals with severe eye motor impairment in addition to physical and speech impairment.
+	\emph{Methods:}
 	Seven participants with varying degrees of eye motor impairments were
 	recruited and \ac{bci} decoding accuracy evaluated under three conditions:
 	overt, covert, and free \ac{vsa} using multiple classification methods.
-	Results confirm that covert \ac{vsa} with central fixation leads to decreased
+	\emph{Results:} covert \ac{vsa} with central fixation leads to decreased
 	accuracy, whereas uncued \ac{vsa} is comparable to overt \ac{vsa} in some
 	gaze-impaired participants.
 	Furthermore, cross-condition decoder training and evaluation suggests that training
 	with overt \ac{vsa} may improve performance in gaze-impaired individuals.
+	\emph{Conclusions:}
 	These findings highlight the need for adaptive decoding strategies and further
 	validation in applied settings used by impaired individuals.
 \end{abstract}
 
+\noindent
+\paragraph{Keywords:}
+brain-computer interface,
+assistive and augmented communication
+event-related potential,
+covert visuospatial attention,
+eye motor impairment,
+decoding
+
 \acresetall
-\section{Introduction}
+\section{Background}
 Neurological conditions, such as acquired brain lesions,
 neuromuscular disorders and \ac{als} can result in severe speech and physical impairment.
 This, in turn, significantly alters an individual's ability to communicate and interact
@@ -197,15 +274,13 @@ Finally, we formulate a set of recommendations based on our experience with carr
 that could be leveraged for the design of further similar studies or \ac{bci}-\ac{aac} solutions for this target population.
 
 
-\section{Materials \& methods}
+\section{Methods}
 \subsection{Recruitment}
 Participants were recruited from the Neuromuscular Reference center at
 University Hospital Leuven (Leuven, Belgium), TRAINM Neuro Rehab Clinics
 (Antwerp, Belgium), the Neurorehabilitation Unit at the Lille University
 Medical Center (Lille, France), and Fondation Partage et Vie (Loos,
 France).
-Ethical approval for this multi-center study was obtained from the Ethics
-Commission of the University Hospital Leuven (S62547).
 Experiments were performed under the supervision of the treating physician.
 
 In order to be recruited, participants must:
@@ -450,6 +525,7 @@ regular need for aspiration of the tracheostoma of some participants
 		the given condition indicated in red.
 		Subjects PB2 and PC4 preferred covert \ac{bci} operation, with PB2 resting gaze
 		near the middle of the screen, and PC4 near the bottom.
+		A high-resolution, non-downsampled figure is available as Additional file 1.
 	}%
 	\label{fig:patients/gaze}
 \end{figure*}
@@ -788,27 +864,91 @@ those who struggle with conventional eye-tracking technologies.
 
 
 \section*{Acknowledgements}
+
+\printacronyms
+
+\section*{Declarations}
+\subsection*{Ethics approval and consent to participate}
+Ethical approval for this multi-center study was obtained from the Ethics
+Commission of the University Hospital Leuven (S62547).
+
+\subsection*{Consent for publication}
+Prior informed consent for publication of the reported data was obtained from
+all participants included in this study.
+
+\subsection*{Availability of data and materials}
+
+The datasets generated and/or analysed during the current study are not publicly
+available due to the policies in agreement with the ethical approval to protect
+sensitive personal information, but are available from the corresponding author
+on reasonable request.
+
+\subsection*{Competing interests}
+The authors declare no competing interests.
+
+\subsection*{Funding}
 AVDK is funded by the special research fund of the KU Leuven (GPUDL/20/031).
+\todo{new funding I'm currently hired on}
 MMVH is supported by research grants received from the European Union’s
 Horizon Europe Marie Sklodowska-Curie Action program
 (grant agreement No. 101118964), the European Union’s Horizon 2020 research and
 innovation program (grant agreement No. 857375), the special research fund of
 the KU Leuven (C24/18/098), the Belgian Fund for Scientific Research – Flanders
 (G0A4118N, G0A4321N, G0C1522N), and the Hercules Foundation (AKUL 043).
-
-The authors acknowledge the support by the RITMEA project co-financed by the
-European Union with the European Regional Development Fund, the French state,
+AVDK, HSM and FC are supported by the RITMEA project co-financed by the
+European Regional Development Fund of the European Union, the French state,
 and the Hauts-de-France Region Council.
+\todo{funding of others}
 
-\appendix
-\section*{Appendix}
-\setcounter{table}{0}
-\renewcommand{\thetable}{A\arabic{table}}
-\begin{table}[h]
-	\footnotesize
-	\printacronyms[template=tabular, heading=none]%
-	\caption{List of acronyms.}%
-\end{table}
+\subsection*{Author's contributions}
+AVDK conceptualized the works and performed the analyses
+presented this work, under supervision of HSM, FC and MMVH.
+JM assisted in data collection, conceptualization and data analysis.
+AW and MDM provided paramedical support and guidance in participant recruitment,
+care and communication.
+EA provided clinical supervision and contributed the neuro-ophthalmologic diagnoses.
+Al authors read and approved the final manuscript.
+
+
+\subsection*{Acknowledgements}
+We acknowledge the active support of clinical, paramedical, management and
+administration staff at the UZ Leuven Neuromuscular Reference Center
+TRAINM Neuro Rehab Clinics Antwerp and the Fondation Partage et Vie Loos.
+We would also like to thank the other colleagues at the KU Leuven Computational
+Neurosciences research group and the University of Lille BCI team
+for their general support.
+
+\section*{Additional files}
+
+\begin{enumerate}
+	\item \textbf{Additional file 1} \\
+	      \emph{Format}: portable network graphics file (.png) \\
+	      \emph{Title}: Heatmap of gaze location per VSA condition.\\
+	      \emph{Description}: High-resolution heatmap of the distribution of recorded
+	      gaze position during the experimental session in the three VSA
+	      conditions.
+	      Crosshairs represent stimulus positions, with positions
+	      cued during the given condition indicated in red.
+	\item \textbf{Additional file 2} \\
+	      \emph{Format}: comma-separated values file (.csv) \\
+	      \emph{Title}: Decoding performance per patient.
+	      \emph{Description}: Full table of decoding target selection accuracies
+	      per patient, decoder and VSA condition.
+	\item \textbf{Additional file 3} \\
+	      \emph{Format}: comma-separated values file (.csv) \\
+	      \emph{Title}: Cross-condition decoding performance per patient.
+	      \emph{Description}: Full table of cross-validated, cross-condition
+	      decoding target selection accuracies per patient and decoder.
+\end{enumerate}
+
+
 \printbibliography
+
+%\appendix
+%\section*{Appendix}
+%
+%\setcounter{table}{0}
+%\renewcommand{\thetable}{A\arabic{table}}
+
 
 \end{document}
