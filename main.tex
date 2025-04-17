@@ -16,6 +16,8 @@
 \usepackage{tabularx}
 \usepackage{authblk}
 
+\usepackage[margin=1in]{geometry}
+
 \usepgfplotslibrary{groupplots}
 \usepgfplotslibrary{colorbrewer}
 
@@ -50,19 +52,14 @@
 \makeatletter
 
 % Left-align abstract heading and content
-\renewenvironment{abstract}{
-	\begin{justify}
-		\textbf{Abstract}\\
-		}{
-	\end{justify}
-}
+\renewenvironment{abstract}{\section*{Abstract}}{}
 
 
 % Draft
 \usepackage{setspace}
-\doublespacing
+\doublespacing%
 \usepackage{lineno}
-\linenumbers
+\linenumbers%
 
 % Preamble
 \input{acronyms.tex}
@@ -72,18 +69,21 @@
 \author[2]{Juliette Meunier}
 \author[3]{Marie de Moura}
 \author[4]{Alixe Willemssens}
+\author[5]{Dorien Geurinckx}
+\author[4]{Edward Schiettecatte}
+\author[6]{Philip Van Damme}
 \author[2]{Hakim Si-Mohammed}
 \author[2]{François Cabestaing}
-\author[5]{Etienne Allart}
+\author[7]{Etienne Allart}
 \author[1]{Marc M. Van Hulle}
 
 \affil[1]{%
+	Leuven Brain Institute;
+	Leuven.AI;
 	KU Leuven,
-	Leuven Brain Institute,
-	Leuven.AI,
 	Department of Neurosciences,
 	Laboratory for Neuro- and Psychophysiology,
-	Campus Gasthuisberg O\&N2,
+	Campus Gasthuisberg,
 	Herestraat 49 bus 1021,
 	BE-3000 Leuven,
 	Belgium
@@ -102,32 +102,54 @@
 	F-59120 Loos,
 	France
 }
-\affil[4]{
+\affil[4]{%
 	TRAINM Neuro Rehab Clinics,
 	Quellinstraat 38,
 	BE-2018 Antwerp,
 	Belgium
 }
-\affil[5]{
+\affil[5]{%
+	KU Leuven,
+	Department of Neurosciences,
+	Laboratory for Experimental Neurology;
+	VIB,
+	Laboratory of Neurobiology,
+	Center for Brain and Disease Research;
+	University Hospitals Leuven
+	Department of Neurology,
+	Campus Gasthuisberg,
+	Herestraat 49,
+	BE-3000 Leuven,
+	Belgium
+}
+\affil[6]{%
+	University Hospitals Leuven
+	Department of Neurology,
+	Campus Gasthuisberg,
+	Herestraat 49,
+	BE-3000 Leuven,
+	Belgium
+}
+\affil[7]{%
 	CHU de Lille,
 	Service de Rééducation Neurologique Cérébrolésion,
-	Université de Lille, UFR3S médecine,
+	Univ. Lille, UFR3S médecine,
 	Lille Neuroscience and Cognition,
 	Hôpital Swynghedauw,
 	Rue André Verhaeghe,
 	F-59000 Lille
 }
-\affil[*]{\texttt{arne.vandenkerchove@kuleuven.be}}
+\affil[*]{Corresponding author, \texttt{arne.vandenkerchove@kuleuven.be}}
 
-\title{
-	Visual ERP-based brain-computer interface use by
-	individuals with severe speech, physical, speech and eye movement impairments:
-	case studies
+\title{%
+	Visual ERP-based brain-computer interface use with with severe speech,
+	physical, speech and eye movement impairments: case studies
 }
 
 \begin{document}
 
 \maketitle
+\todo{Please double check your contact and authorship information}
 
 \begin{abstract}
 	\noindent
@@ -138,7 +160,8 @@
 	limited when facing eye motor impairments that affect gaze fixation
 	and \ac{vsa}.
 	This study investigates the feasibility of a gaze-independent visual oddball
-	\ac{bci} for individuals with severe eye motor impairment in addition to physical and speech impairment.
+	\ac{bci} for individuals with severe eye motor impairment in addition to
+	physical and speech impairment.
 	\emph{Methods:}
 	Seven participants with varying degrees of eye motor impairments were
 	recruited and \ac{bci} decoding accuracy evaluated under three conditions:
@@ -162,7 +185,7 @@ covert visuospatial attention,
 eye motor impairment,
 decoding
 
-\acresetall
+\acresetall%
 \section{Background}
 Neurological conditions, such as acquired brain lesions,
 neuromuscular disorders and \ac{als} can result in severe speech and physical impairment.
@@ -191,8 +214,7 @@ Eye motor impairments are presumed to reduce performance in operating visual
 \acp{bci}~\cite{VanDenKerchove2024a}, since users
 cannot comfortably redirect their gaze at the desired target,
 i.e., perform overt \ac{vsa}.
-This is usually circumvented by designing gaze-independent~
-\acp{bci}~\cite{Riccio2012}.
+This is usually circumvented by designing gaze-independent \acp{bci}~\cite{Riccio2012}.
 These interfaces either avoid visual stimulation or exploit some form of
 covert \ac{vsa}, where gaze and \ac{vsa} do not coincide.
 
@@ -205,8 +227,8 @@ central fixation.
 One could argue that a \ac{bci} verified to work only with central fixation could
 also be considered gaze-dependent.
 This does not account for the residual eye motor capabilities of most individuals
-with \ac{sspgi}, the (dis)comfort they experience while
-performing gaze fixation and other confounding factors resulting from their eye
+with \ac{sspgi}, the (dis)comfort they experience while performing gaze fixation
+and other confounding factors resulting from their eye
 motility.
 
 It is notable that studies reporting on
@@ -288,10 +310,10 @@ In order to be recruited, participants must:
 	\item be at least 18 years old and no older than 60
 	      years,
 	\item belong to class 2 or 3 according to the \ac{bci}	user selection criteria
-	      presented by~\textcite{Wolpaw2006},
+	      presented by~\textcite{Wolpaw2006},%
 	      \label{item:patients/inclusion/wolpaw}
 	\item have limitations to the extent or comfort of their eye motor control
-	      (partial or full gaze paralysis, uncontrolled gaze movements, or conditions affecting the capability to direct the gaze or fixate.)
+	      (partial or full gaze paralysis, uncontrolled gaze movements, or conditions affecting the capability to direct the gaze or fixate.)%
 	      \label{item:patients/inclusion/oculomotor}
 	\item have given their informed consent prior to participation.
 \end{enumerate}
@@ -306,7 +328,7 @@ Participants were excluded if they:
 	\item had a severe loss in vision or hearing that would significantly impair
 	      participation in the experiment,\label{item:patients/exclusion/vision}
 	\item were using specific psychoactive medications or substances that could affect the outcome.
-	      (neuroleptics or benzodiazepines)
+	      (neuroleptics or benzodiazepines)%
 	      \label{item:patients/exclusion/cognitive}
 	\item were unable to understand the experiment instructions and cooperate,
 	\item had any other limitations preventing them from performing the given task.
@@ -324,24 +346,24 @@ Ultimately, 7 participants were retained.
 Of these, one participant was diagnosed with bulbar-onset \ac{als}, three with
 \ac{fa} an three were recovering from \ac{lis} due to stroke.
 Table~\ref{tab:patients/patients} lists the included participants and their
-diagnoses.
+diagnoses, each case is clinically described in \cref{app:clinical-eval}.
 \begin{table*}
-	\centering
 	\footnotesize
 	\input{patients_table.tex}
 	\caption{Included participants with their diagnosis and relevant communication
 		capabilities.
-		Trach.: underwent a tracheostomy, W: classification according
-		to~\textcite{Wolpaw2006}, KB: classification according
+		W:\ classification according
+		to~\textcite{Wolpaw2006}, KB:\ classification according
 		to~\textcite{Kuebler2008}.
-	}
+	}%
 	\label{tab:patients/patients}
 \end{table*}
 
-\subsection{Visual skills and eye motor examination}
 
-Self-reported eye motor and visual abnormalities as reported in~\cref{tab:patients/eye}
-were recorded.
+\subsection{Visual skill and eye motor examination}
+
+Self-reported eye motor and visual abnormalities or those observed in clinical
+assessment are reported in~\cref{tab:patients/eye}
 Visual skills were assessed using the framework established by \textcite{FriedOken2020}.
 These describe on a higher level the factors that can reduce visual \ac{bci} performance when impaired,
 and include visual acuity, visual fixation, eyelid function, ocular motility,
@@ -359,7 +381,8 @@ Vision was assessed using a logMAR chart~\cite{Bailey1976}.
 		Self-reported visual skills as defined by \textcite{FriedOken2020} of
 		gaze-impaired participants included in this study.
 		\skill\ skilled, \noskill\ impaired, \snoskill\ severely impaired.
-		Visual acuity was assessed using the logMAR scale (lower is better).}
+		Visual acuity was assessed using the logMAR scale (lower is better).
+	}%
 	\label{tab:patients/eye}
 \end{table*}
 
@@ -367,19 +390,14 @@ All participants reported some degree of fatigue or discomfort when fixating.
 Participant PA1 had the mildest impairment, only reporting fatigue when fixating
 for prolonged times.
 The \ac{fa} participants were mostly affected by eye tremors and impaired pursuit.
-PB2 suffered from especially severe horizontal oscillating involuntary eye
-movements.
-Eye motor function of participants PC2, PC3, and PC4 was most severely affected.
-Participant PC2 was only able to look up and down and had a deviation in the
-left eye causing diplopia, but this was corrected by a prism glass.
-Participant PC3 only retained partial motility of the right eye, while the left eye was permanently closed.
-Participant PC4 had one deviated eye with a corneal abscess affecting the motility
-and vision in the right eye, and reducing motility in the left.
+Eye motor function of participants PC2, PC3, and PC4, those recovering from
+brain stem and cerebellar stroke, was most severely affected.
+
+
 
 Finally, we also recorded gaze position throughout the experimental session to
 register the participant's gaze relative to the stimulated \ac{bci} targets,
-using a Tobii X2-30 Compact (Tobii
-Technology AB, Sweden) portable eye tracker placed at the bottom of the laptop screen.
+using a Tobii X2-30 Compact (Tobii Technology AB, Sweden) portable eye tracker placed at the bottom of the laptop screen.
 The registered data was cleaned by fusing left and right eye screen-based gaze
 coordinates into one channel for the horizontal and one for vertical gaze position.
 If both were present for a given sample, the fused channel was the mean of both
@@ -432,8 +450,10 @@ of the stimulation procedure.
 		\end{subfigure}
 	\end{minipage}
 
-	\caption{Stimulation and recording setup for the oddball \ac{bci} experiment
-		with different \ac{vsa} conditions}
+	\caption{%
+		Stimulation and recording setup for the oddball \ac{bci} experiment
+		with different \ac{vsa} conditions
+	}%
 	\label{fig:methods/stimulation/stimulation}
 \end{figure*}
 
@@ -502,7 +522,7 @@ stimulation blocks.
 
 
 
-\subsection{Eye tracking analysis}
+\subsection{Eye tracking analysis}%
 \label{sec:patients/outcomes/gaze}
 Given their eye motor impairment as listed in~\cref{tab:patients/eye}, we aimed to clarify the
 capabilities of the participants in performing overt \ac{vsa} and central gaze fixation and to
@@ -529,8 +549,6 @@ regular need for aspiration of the tracheostoma of some participants
 	}%
 	\label{fig:patients/gaze}
 \end{figure*}
-\todo{smoothing}
-\todo{link to high resolution}
 
 PA1 had relatively intact gaze control and was able to correctly perform the
 cued overt and covert settings.
@@ -567,6 +585,7 @@ stimuli.
 
 \Cref{fig:patients/decode} shows cross-validated single-trial target selection
 accuracy for the evaluated \ac{vsa} settings for the different decoders.
+A full table of results is available as Additional file 2.
 Accuracy results do not reveal a clear trend in decoder performance per
 condition.
 In the covert \ac{vsa} setting with cued central gaze fixation, accuracy
@@ -600,17 +619,18 @@ present.
 		repetitions. Square markers indicate target selection accuracy for 10
 		stimulation repetitions.
 		($\frac{1}{6}$).
-	}
+	}%
 	\label{fig:patients/decode}
 \end{figure*}
 
-\subsection{Cross-condition decoder training and evaluation}
+\subsection{Cross-condition decoder training and evaluation}%
 \label{sec:patients/outcomes/cross}
 
 As an alternative approach to selecting the most suitable decoder, we used
 \ac{tlda} as the base decoder and verified whether accuracy could be improved
 if \ac{bci} users with gaze impairment performed the decoder training session
 session relying maximally on their residual gaze control.
+A full table of results is available as Additional file 3.
 
 \Cref{fig:patients/cross} shows that for participants PB1 and PC2 covert \ac{vsa} decoding
 improved when training with overt \ac{vsa}.
@@ -619,7 +639,7 @@ always perform cued central gaze fixation in the covert \ac{vsa} setting,
 which might have affected the results.
 \begin{figure*}
 	\input{figures/cross.tikz.tex}
-	\caption{
+	\caption{%
 		Decoding performance when calibrating the \ac{tlda} decoder in a given \ac{vsa}
 		setting, and evaluating it in another, reported as
 		single-trial \ac{rocauc}.
@@ -627,7 +647,7 @@ which might have affected the results.
 		repetitions.
 		For participants PA1, PB2, and PC3, decoding accuracy in the covert \ac{vsa} setting with central gaze fixation
 		improved when calibrating with overt gaze fixation.
-	}
+	}%
 	\label{fig:patients/cross}
 \end{figure*}
 
@@ -782,12 +802,10 @@ Instead, it was assumed that participants operated most comfortably in the free
 \ac{vsa} condition.
 Even though participants reported that they could comfortably operate the
 system, this must be confirmed with more quantitative assessments.
-\todo{if no eye motor report:
-	Eye motor disability could also have been assessed more
-	objectively~\cite{FriedOken2020}, using, e.g.,
-	the Revised Coma Recovery Scale~\cite{Giacino2004} or the NSUCO
-	oculomotor exam~\cite{Maples1992}.
-}
+Eye motor disability could also have been assessed more quantitavely and
+objectively~\cite{FriedOken2020}, using, e.g.,
+the Revised Coma Recovery Scale~\cite{Giacino2004} or the NSUCO
+oculomotor exam~\cite{Maples1992}, in order to relate them to the decoding or satisfaction results.
 
 %Finally, the stimulation procedure parameters
 %from~\textcite{VanDenKerchove2024} were adapted to make the counting task
@@ -837,9 +855,9 @@ reflect practical use.
 While this top-down approach may not suit novel \ac{bci} paradigms in early
 development, it is appropriate for mature paradigms such as visual oddball
 BCIs~\cite{Pan2022,Fouad2020}, where the main challenge lies in usability and
-disseminating the technology to potential users.
+disseminating the technology to potential userssection
 
-\acresetall
+\acresetall%
 \section{Conclusion}
 This study explored the usability of \ac{eeg}-based gaze-independent visual BCIs in
 individuals with \ac{sspgi}, focusing on the impact of eye motor impairments
@@ -862,15 +880,14 @@ Ultimately, optimizing gaze-independent BCI designs could enhance communication
 options for individuals with severe motor and speech impairments, particularly
 those who struggle with conventional eye-tracking technologies.
 
-
-\section*{Acknowledgements}
-
-\printacronyms
+\printacronyms%
 
 \section*{Declarations}
 \subsection*{Ethics approval and consent to participate}
 Ethical approval for this multi-center study was obtained from the Ethics
-Commission of the University Hospital Leuven (S62547).
+Commission of the University Hospitals Leuven (S62547),
+and prior informed consent to participate  was obtained from
+all participants included in this study.
 
 \subsection*{Consent for publication}
 Prior informed consent for publication of the reported data was obtained from
@@ -887,26 +904,33 @@ on reasonable request.
 The authors declare no competing interests.
 
 \subsection*{Funding}
-AVDK is funded by the special research fund of the KU Leuven (GPUDL/20/031).
-\todo{new funding I'm currently hired on}
+AVDK is jointly funded by the special research fund of the KU Leuven (GPUDL/20/031) and
+the University of Lille under the Global PhD Scholarship Programme, and by
+the Belgian Fund for Scientific Research – Flanders (G0A4321N).
 MMVH is supported by research grants received from the European Union’s
 Horizon Europe Marie Sklodowska-Curie Action program
 (grant agreement No. 101118964), the European Union’s Horizon 2020 research and
 innovation program (grant agreement No. 857375), the special research fund of
 the KU Leuven (C24/18/098), the Belgian Fund for Scientific Research – Flanders
 (G0A4118N, G0A4321N, G0C1522N), and the Hercules Foundation (AKUL 043).
-AVDK, HSM and FC are supported by the RITMEA project co-financed by the
+HSM and FC are supported by the RITMEA project co-financed by the
 European Regional Development Fund of the European Union, the French state,
 and the Hauts-de-France Region Council.
-\todo{funding of others}
+\todo{%
+	If you are an academic partner and received governmental or project
+	funding during the project please let me know in order to complete this
+	section.
+}
 
 \subsection*{Author's contributions}
-AVDK conceptualized the works and performed the analyses
-presented this work, under supervision of HSM, FC and MMVH.
+AVDK conceptualized the work and performed the analyses
+presented this study, under supervision of HSM, FC and MMVH.
 JM assisted in data collection, conceptualization and data analysis.
-AW and MDM provided paramedical support and guidance in participant recruitment,
+AW and MDM provided paramedical support in participant recruitment,
 care and communication.
-EA provided clinical supervision and contributed the neuro-ophthalmologic diagnoses.
+DG assisted in participant recruitment at the Univesity Hospitals Leuven NMRC under clinical supervision of PVD.
+ES supervised participant recruitment at TRAINM.
+EA provided clinical supervision during conceptualization, experimentation, supervised recruiting at Fondation Partage et Vie and contributed the neuro-ophthalmologic diagnoses.
 Al authors read and approved the final manuscript.
 
 
@@ -942,11 +966,12 @@ for their general support.
 \end{enumerate}
 
 
-\printbibliography
+\printbibliography%
 
-%\appendix
-%\section*{Appendix}
-%
+
+\appendix
+\input{clinical_reports.tex}
+
 %\setcounter{table}{0}
 %\renewcommand{\thetable}{A\arabic{table}}
 
