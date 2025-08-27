@@ -1,0 +1,82 @@
+# Reviewer 1
+
+We thank the reviewer for their commendation and for their extensive and detailed
+review comments, which improve the quality of the manuscript.
+
+## Background
+
+l23,l37: The acronym AAC and the terminology have been updated to 'augmentative and alternative communication'
+
+l48: This was updated to 'some BCI and AAC solutions'
+
+l52-54: The paragraph starting at l52 in the revised paragraph has been rewritten
+to clarify the research gap between earlier work and the current study.
+Earlier work was indeed performed using healthy participants without eye motor impairment,
+presumably due to the recruitment difficulties.
+They also used a fixation task which might not be suited for evaluating BCIs
+for people with actual gaze impairment.
+
+l92: The word 'capabilities' as presented here was intended to refer to
+the user's eye movement ability and preferences on the one hand, and their
+success at using the BCI as evaluated by the decoding task. This has been rephrased
+in the revised manuscript on l94.
+
+* TODO: State the hypotheses or research questions
+
+* TODO: Latency jitter is mentioned only once in the introduction but figures prominently in the discussion
+(check original draft of this or WCBLE paper for more references)
+
+## Methods
+
+* TODO: Please add a short description of the study design, number and duration of visits
+
+l106: A paragraph summarized description of the 3 classes presented by Wolpaw et al. (2006)
+was included in the revised manuscript, starting at line 106 in the revised manuscript.
+
+l111-112: exclusion criterion 1 was reformulated to
+"had any diagnosis of a major medical condition other than neuromuscular conditions covered by
+inclusion criteria 2 and 3"
+
+* TODO: shorten participant ids
+
+Table 1: We have implemented the reviewers helpful terminology remarks in Table 1.
+The Kübler and Birbaumer classification system is included here since there
+is to the authors' knowledge no agreed upon standardize classification system
+for BCI user capabilites within the field.
+Some readers may find the Wolpaw criteria more clear due to its simplicity
+and it is included here since it was part of the inclusion criteria. Others prefer the
+more granular and potentially wider used criteria presented by Kübler and Birbaumer
+more helpful.
+Both systems were also introduced around the same time (2006 and 2008).
+Hence both systems are included.
+The table's description now clarifies that the main selection criterion is the
+Wolpaw classification
+
+Table 2: we have updated the description in Table 1 and specified precies boundaries
+on visual acuity according to the classification of visual acuity defined by WHO (2019).
+
+Section 2.2
+ * TODO: How was self-report of eye movements assessed report anything related to the following (fatigue or discomfort when moving the eyes or fixating, involuntary eye movements, specific eye movement directions that are uncomfortable or impossible and parts in the field of view that cannot be reached or gazed at, other issues with the eyes or vision)
+  * TODO: how differentiate between impaired and severly impaired (subjective evaluatoin, maybe Fried-Oken can help? but admit it was subjective)
+  * TODO: Who conducted the clinical assesment (mix, info of self-reports,, observation, clinician, paramedical team, clarify who for what)
+  * All Participants wore their corrective lenses during the assesment of eye movements and visual acuity, and during the BCI session. This is clarified in the revised manuscript on l139.
+
+Section 2.3:
+  * TODO: more info about the task, get from other paper
+
+TODO: other section 2.3 comments
+TODO: rest of the review comments of reviewer 1
+
+# Reviewer 2
+
+We appreciate the reviewer's positive appreciation of the manuscript and have
+made the necessary classifications in the text.
+
+1. TODO
+
+2. All performed decoding was indeed preformed using a single-trial target
+selection scheme. We have updated lines 186 and 213 in the revised manuscript.
+
+3. TODO
+
+TODO update line numbers after all revisions are done
