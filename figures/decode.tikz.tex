@@ -1,112 +1,79 @@
 \sffamily
 \begin{tikzpicture}[trim axis group left]
 
-  \begin{groupplot}[
-    group style={%
-      group size=3 by 1,
-      horizontal sep=10pt,
-      ylabels at=edge left,
-      yticklabels at=edge left,
-    },
-    ybar,
-    ymin=0, ymax=105,
-    ytick={0,20,40,60,80,100},
-    xtick={0,1,2,3,4,5,6},
-    xticklabels={PA1,PB1,PB2,PB4,PC2,PC3,PC4},
-    xtick pos=bottom,
-    ymajorgrids=true,
-    xlabel={subject},
-    ylabel={target selection accuracy (\%)},
-    width=0.33\linewidth-5pt,
-    scale only axis,
-    /pgf/bar width=0.008\linewidth,
-    cycle list/Set2-3,
-    every axis plot/.append style={fill},
-    every axis plot post/.append style={error bars/.cd, error bar style={color=gray}},
-  ]
+	\begin{groupplot}[
+			group style={%
+					group size=3 by 1,
+					horizontal sep=10pt,
+					ylabels at=edge left,
+					yticklabels at=edge left,
+				},
+			ybar,
+			ymin=0, ymax=105,
+			ytick={0,20,40,60,80,100},
+			xtick={0,1,2,3,4,5,6},
+			xticklabels={A1,B1,B2,B4,C2,C3,C4},
+			xtick pos=bottom,
+			xlabel={subject},
+			ylabel={target selection accuracy (\%)},
+			width=0.33\linewidth-5pt,
+			scale only axis,
+			/pgf/bar width=3pt,
+			cycle list/Set2-6,
+			cycle list shift=3, % <-- skips first 3 colors
+			every axis plot/.append style={fill},
+			every axis plot post/.append style={error bars/.cd, error bar style={color=gray}},
+		]
 
-    \newcommand{\drawBarPlot}[2]{%
-  	  \pgfplotstableread[col sep=comma]{data/decode_results_#1_#2_viz.csv}\datatable
-  	  \addplot+[error bars/.cd, y dir=both, y explicit]
-        table[
-          x=subject_index,
-          y=test_single_trial_accuracy-mean,
-          y error minus=test_single_trial_accuracy-ci_minus,
-          y error plus=test_single_trial_accuracy-ci_plus,
-          col sep=comma
-        ] {\datatable};
-      }
+		\newcommand{\drawBarPlot}[2]{%
+			\pgfplotstableread[col sep=comma]{data/decode_results_#1_#2_viz.csv}\datatable
+			\addplot+[error bars/.cd, y dir=both, y explicit]
+			table[
+					x=subject_index,
+					y=test_single_trial_accuracy-mean,
+					y error minus=test_single_trial_accuracy-ci_minus,
+					y error plus=test_single_trial_accuracy-ci_plus,
+					col sep=comma
+				] {\datatable};
+		}
 
-    \newcommand{\drawRepMarker}[5]{%
-  	  \pgfplotstableread[col sep=comma]{data/decode_results_#1_#2_viz.csv}\datatable
-      \addplot+[only marks, mark=#5, mark size=2pt]
-        table[
-          x expr=\thisrow{subject_index} + #4,
-          y=test_accuracy_reps_#3-mean,
-          col sep=comma
-        ] {\datatable};
 
-    }
+		\newcommand{\drawChanceLevel}{%
+			\draw[gray, dashed] (axis cs:-1,100/6) -- (axis cs:7,100/6);
+		}
 
-    \newcommand{\drawChanceLevel}{%
-	    \draw[gray, dashed] (axis cs:-1,16.66666667) -- (axis cs:7,16.66666667);
-    }
 
-    \newcommand{\offset}{0.3}
+		%% Plot overt
+		\nextgroupplot[title=Overt \ac{vsa}]
+		% Draw repetition performance
+		\drawBarPlot{overt}{WCBLE}
+		\drawBarPlot{overt}{tLDA}
+		\drawBarPlot{overt}{XDAWNCov+TS+LDA}
+		% Draw chance level
+		\drawChanceLevel
 
-    %% Plot overt
-    \nextgroupplot[title=Overt \ac{vsa}]
-    % Draw repetition performance
-    \drawRepMarker{overt}{WCBLE}{5}{-\offset}{diamond}
-    \drawRepMarker{overt}{tLDA}{5}{0}{diamond}
-    \drawRepMarker{overt}{XDAWNCov+TS+LDA}{5}{\offset}{diamond}
-    \drawRepMarker{overt}{WCBLE}{10}{-\offset}{square}
-    \drawRepMarker{overt}{tLDA}{10}{0}{square}
-    \drawRepMarker{overt}{XDAWNCov+TS+LDA}{10}{\offset}{square}
-	  % Bar plot
-    \drawBarPlot{overt}{WCBLE}
-    \drawBarPlot{overt}{tLDA}
-    \drawBarPlot{overt}{XDAWNCov+TS+LDA}
-    % Draw chance level
-    \drawChanceLevel
+		%% Plot overt
+		\nextgroupplot[title=Covert \ac{vsa}]
+		% Bar plot
+		\addlegendimage{empty legend};
+		\addlegendentry{\textbf{Decoder}};
+		\drawBarPlot{covert}{WCBLE}
+		\addlegendentry{WCBLE};
+		\drawBarPlot{covert}{tLDA}
+		\addlegendentry{tLDA};
+		\drawBarPlot{covert}{XDAWNCov+TS+LDA}
+		\addlegendentry{XDAWNCov+TS+LDA};
+		%% Draw chance level
+		\drawChanceLevel
 
-    %% Plot overt
-    \nextgroupplot[title=Covert \ac{vsa}]
-	  % Bar plot
-    \addlegendimage{empty legend};
-    \addlegendentry{\textbf{Decoder}};
-    \drawBarPlot{covert}{WCBLE}
-  	\addlegendentry{WCBLE};
-    \drawBarPlot{covert}{tLDA}
-  	\addlegendentry{tLDA};
-    \drawBarPlot{covert}{XDAWNCov+TS+LDA}
-  	\addlegendentry{XDAWNCov+TS+LDA};
-    % Draw repetition performance
-    \drawRepMarker{covert}{WCBLE}{5}{-\offset}{diamond}
-    \drawRepMarker{covert}{tLDA}{5}{0}{diamond}
-    \drawRepMarker{covert}{XDAWNCov+TS+LDA}{5}{\offset}{diamond}
-    \drawRepMarker{covert}{WCBLE}{10}{-\offset}{square}
-    \drawRepMarker{covert}{tLDA}{10}{0}{square}
-    \drawRepMarker{covert}{XDAWNCov+TS+LDA}{10}{\offset}{square}
-    %% Draw chance level
-    \drawChanceLevel
+		%% Plot free
+		\nextgroupplot[title=Free \ac{vsa}]
+		% Bar plot
+		\drawBarPlot{free}{WCBLE}
+		\drawBarPlot{free}{tLDA}
+		\drawBarPlot{free}{XDAWNCov+TS+LDA}
+		%% Draw chance level
+		\drawChanceLevel
 
-    %% Plot overt
-    \nextgroupplot[title=Free \ac{vsa}]
-    % Draw repetition performance
-    \drawRepMarker{free}{WCBLE}{5}{-\offset}{diamond}
-    \drawRepMarker{free}{tLDA}{5}{0}{diamond}
-    \drawRepMarker{free}{XDAWNCov+TS+LDA}{5}{\offset}{diamond}
-    \drawRepMarker{free}{WCBLE}{10}{-\offset}{square}
-    \drawRepMarker{free}{tLDA}{10}{0}{square}
-    \drawRepMarker{free}{XDAWNCov+TS+LDA}{10}{\offset}{square}
-
-	  % Bar plot
-    \drawBarPlot{free}{WCBLE}
-    \drawBarPlot{free}{tLDA}
-    \drawBarPlot{free}{XDAWNCov+TS+LDA}
-    %% Draw chance level
-    \drawChanceLevel
-
-  \end{groupplot}
+	\end{groupplot}
 \end{tikzpicture}%

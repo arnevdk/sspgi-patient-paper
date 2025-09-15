@@ -1,0 +1,97 @@
+# Editor
+
+Dear Dr Van Den Kerchove,
+
+Your manuscript, "Visual ERP-based brain-computer interface use with with severe
+physical, speech and eye movement impairments: case studies", has now been assessed.
+
+The reviewers appreciate the work, but they also indicate that many important
+points are not sufficiently explained, especially related to the methods used
+and data analysis.
+
+We invite you to revise your paper, carefully addressing the comments from the
+reviewers. When your revision is ready, please submit the updated manuscript and
+a point-by-point response. This will help us move to a swift decision.
+
+We recommend submitting all revisions within the mentioned deadline.
+
+If you need more time, please contact us and include your submission ID.
+
+Kind regards,
+
+Prof. Strahinja Dosen
+email: sdosen@hst.aau.dk
+Editor
+Journal of NeuroEngineering and Rehabilitation
+
+Support contact: beverly.mapua@springernature.com
+
+Submission ID: 4cb979bd-d5e7-4a00-8cfc-1e227a03e112
+
+# Reviewer 1
+
+Reviewer 1
+
+The authors are to be commended for this work involving a participant population who are seldom included in BCI research. The paper is generally well written, but is missing some important information and could benefit from greater clarity in the presentation of the results and discussion.
+
+Background
+• Lines 23 and 37: The correct term is “augmentative and alternative communication”
+• Line 48: Only some BCI and AAC systems require gaze control – this sentence makes it sound like all of them do.
+• Lines 52-54: Is this an accurate characterization of previous work? Did these studies assume that BCI users with oculomotor impairment would prefer central gaze fixation, or did they require central gaze fixation because they were simulating (or standardizing) oculomotor impairment due to the difficulty of recruiting participants with oculomotor impairment (or with the same degree of impairment)?
+• Line 92: How were participant capabilities and experiences explored? This is not mentioned in the rest of the paper.
+• Please state the hypotheses or research questions. It is not clear how the results presented later relate back to the “contributions of this study” as listed in lines 91-94.
+• Latency jitter is mentioned only once in the introduction but figures prominently in the discussion. Please add more literature review related to jitter.
+
+Methods
+• Please add a short description of the study design, number and duration of visits, etc.
+• Line 106: These classes are not widely used in the BCI literature and may be unfamiliar to many readers. Please consider using a functional description instead of, or in addition to, these classes, so the reader does not have to find this old, obscure paper to understand your inclusion criteria.
+• Lines 111-112: This wording is difficult to understand.
+• Please consider shortening/simplifying participant IDs. The eye tends to want to look at either the first or last character and ignore the middle, so it was easy to confuse PA1 and PB1, for example. Something like 1-7 or A-G would be easier to follow, but even just removing the P would help.
+• Table 1: Please be more specific when describing communication methods. Does “communication” mean “primary communication method”? Many people with SSPI use multiple methods. Does “verbal” mean “speech”? If it does, say so – all communication involving words is verbal, but not all verbal communication is speech. “Tablet” and “letterboard” are AAC tools, but the access method is unspecified. “Eye movement” is an access method, but the tool or technique is unspecified. The participant descriptions in the appendix are helpful, but the descriptions in this table could use some improvement.
+• Table 1: This seems to be the first and only mention of the Kubler and Birbaumer classification system – why include it in the table when it is not described anywhere in the text?
+• Table 2: Please provide some guidance in the caption about interpreting the logMAR scores, e.g. 0.0 = normal vision, values between x and y represent mild/moderate/severe impairment.
+• Section 2.2: Please provide the questions used to elicit self-reported eye motor and visual abnormalities (perhaps in an appendix or supplemental material). How did you or the participants differentiate between “impaired” and “severely impaired”?
+• Section 2.2: Please clarify which skills were assessed via self-report vs. clinical assessment.
+• Section 2.2: Who conducted the clinical assessment?
+• Section 2.2: For participants who wear corrective lenses, were they wearing them during these assessments? Is the reported visual acuity with or without correction?
+• Section 2.3: Please provide a bit more detail about the task(s) so the reader does not need to refer to another paper. For example, how many times was each target intensified in each block? Was each target identified as the cued target one time per block? Did participants receive any feedback about decoding accuracy?
+• Was condition order randomized/counterbalanced? If not, what was the order?
+• Where were sessions conducted? At participants’ homes? In a lab environment?
+• Did participants wear corrective lenses (if applicable) during the task?
+• Please add a section describing the outcome variables and data analysis methods.
+
+Results
+• Figure 3 is difficult to interpret. Please consider some visual modifications
+to aid the reader in understanding this figure, such as adding horizontal space
+between participants, or removing unnecessary horizontal lines so it is easier
+to see the dashed line.
+
+In addition, the caption focuses on comparing performance across the three VSA
+conditions, but the way the data are presented in the figure itself seems to
+focus on comparing performance across decoders. It is not easy to see that
+“accuracy in free VSA is generally on par with the overt VSA setting,” as those
+data are not presented next to each other. If it is important to compare
+performance across decoders as well as across VSA conditions, perhaps that
+should be done in two separate figures.
+
+• Section 3.2/Figure 3: The figure caption mentions selection accuracy for 5 and 10 repetitions, with diamond and square markers, but this is not explained in the text. Do the bars represent accuracy with fewer repetitions? Again, this figure is confusing.
+• Section 3.3/Figure 4: This seems to come out of nowhere. Please describe this portion of the study in the methods section.
+• Sections 3.2 and 3.3 describe comparisons between different conditions and decoders - what statistical tests were performed to make these comparisons? These should be described in the Methods section.
+
+Discussion
+• Please relate your results back to the (few) other studies involving visual BCI use by people with SSPGI. What does your study add?
+• Lines 250-263: Accounting for latency jitter does not seem to be mentioned in the methods or results, so I was confused by its appearance here.
+• Section 4.2: Please add some discussion about clinical implications related to ocular motility impairment – that is ostensibly the purpose of this article but is not mentioned here.
+• Lines 293-297: This is the first mention of participant feedback. Please indicate in the methods section how you elicited this feedback, and add a few sentences to the results section. Similarly, Line 320 mentions participant-reported comfort – how and when was this reported?
+• Line 310: Please consider avoiding language like “wheelchair-bound” and “suffer” when describing people with disabilities. Here is a helpful resource: https://www.ndrn.org/resource/communicating-about-people-with-disabilities/
+
+# Reviewer 2
+
+An interesting study on gaze independent visual ERP BCI use with end-users that have eye motor impairments. Three BCI conditions were evaluated overt, covert and free visuospatial attention (VSA). Gaze position was recording using an eye tracker.
+
+Inclusion and exclusion criteria are reasonable and the authors make a good report of the end-users' visual skills. The heat maps reported by the authors are particularly interesting.
+
+Minor issues:
+- please explain the task of the participants performed in more detail... how many trials, selections etc.
+- please clarify if decoding was all single trial
+- please include physiological data comparing the conditions (ERPs, topographies)
