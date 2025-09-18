@@ -1,229 +1,232 @@
+
 # Reviewer 1
 
-We thank the reviewer for their commendation and for their extensive and detailed
-review comments, which improve the quality of the manuscript.
+We thank the reviewer for their commendation and for their extensive and
+detailed review comments, all of which have improved the quality of the
+manuscript.
 
 ## Background
 
-l23,l37: The acronym AAC and the terminology have been updated to 'augmentative
-  and alternative communication'.
+l23, l37:
+  The acronym AAC and the terminology have been updated to 'augmentative and
+  alternative communication'.
 
-l48: This was updated to 'some BCI and AAC solutions'.
+l48:
+  The sentence regarding gaze-control in BCI and AAC systems has been updated to
+  'some BCI and AAC solutions'.
 
-l52-54: The paragraph at lines TODO in the revised manuscript has been
-  rewritten to clarify the research gap between earlier work and the current
-  study. Earlier work was indeed performed using healthy participants without
-  eye motor impairment, presumably due to the recruitment difficulties. They
-  also used a fixation task which might not be suitable for evaluating BCIs for
+l52–54:
+  The paragraph at lines 54-66 in the revised manuscript has been rewritten to
+  clarify the research gap between earlier work and the current study. Earlier
+  work was indeed performed with healthy participants without eye motor
+  impairment, presumably due to recruitment difficulties. These studies also
+  used a fixation task, which might not be suitable for evaluating BCIs for
   people with actual gaze impairment.
 
-l92: The word 'capabilities' as presented here was intended to refer to the
-  user's eye movement ability and preferences on the one hand, and their success
-  at using the BCI as evaluated by the decoding task. This has been rephrased
-  in the revised manuscript on line TODO.
+l92:
+  The word 'capabilities' as presented in the original contributions was
+  intended to refer to the user's eye movement ability and preferences on the
+  one hand, and their success at using the BCI as evaluated by the decoding task
+  on the other. This has been rephrased in the revised manuscript on lines
+  118-119.
 
-* The hypotheses put forward during the research and preparation of the
-  manuscript have now explicitly been stated at the end of the introduction,
-  before the contribution. These hypotheses were formulated as the following
-  research questions:
-    - Do BCI users with speech and gaze impairment naturally rely on covert
-      or overt VSA, or a mix of both?
-    - If they rely on covert VSA, do they also benefit from decoding
-      approaches improving covert VSA decoding?
-    - If they can perform a mix of covert and overt VSA, can cued overt or
-      covert be exploited to craft a suitable calibration and operation
-      strategy to increase performance and comfort.
-  The last two paragraphs at lines TODO in the revised manuscript of the
-  introduction have been adapted to clarify the setup of the study.
-
-
-* A paragraph at lines TODO on the relevance of latency jitter in covert VSA decoding
-  is now added to the Background section of the revised manuscript on line TODO.
-
+* The hypotheses formulated during the research and preparation of the
+  manuscript have now been stated explicitly at the end of the introduction,
+  before the contribution paragraph. These hypotheses were formulated in terms
+  of the following research questions:
+  - Do BCI users with speech and gaze impairment naturally rely on covert or
+    overt VSA, or a mix of both?
+  - Do they also benefit from decoding approaches improving covert VSA decoding?
+  - If they can perform a mix of covert and overt VSA, can cued overt or covert
+    be exploited to craft a suitable calibration and operation strategy to
+    increase performance and comfort?
+  The last two paragraphs at lines 101-123 of Section 1 in the revised
+  manuscript been adapted to clarify the setup of the study.
+* A paragraph on the relevance of latency jitter in covert VSA decoding has been
+  added to Section 1 of the revised manuscript at lines 87-100.
 
 ## Methods
 
-* Section 2.1 'Recruitment' has been renamed to 'Recruitment and study design',
-  and the second-to-last paragraph at lines TODO has been added to describe the
-  visits, their purpose and duration.
+* Section 2.1 'Recruitment' has been renamed 'Recruitment and study design', and
+  the paragraph at lines 153-159 has been added to describe the  visits, their
+  purpose, and their duration.
 
+l106:
+  A paragraph summarizing the description of the three classes presented by
+  Wolpaw et al. (2006) was included at lines 131-135 in the revised manuscript.
 
-l106: A paragraph summarizing the description of the 3 classes presented by Wolpaw
-  et al. (2006) was included at lines TODO in the revised manuscript, starting
-  at line TODO in the revised manuscript.
-
-l111-112: exclusion criterion 1 was reformulated to "had any diagnosis of a
-  major medical condition other than neuromuscular conditions covered by
-  inclusion criteria 2 and 3"
+l111–112:
+  Exclusion criterion 1 was reformulated to "had any diagnosis of a major
+  medical condition other than neuromuscular conditions covered by inclusion
+  criteria 2 and 3."
 
 * All participant IDs have been shortened by dropping the letter 'P', which
-  referred to 'participant', but is indeed redundant. The IDs have been updated
-  (e.g. PA1 -> A1). The letter (A,B,C) refers to the patient center of
-  recruitment.
+  referred to 'participant' but was indeed redundant. The IDs have been updated
+  (e.g., PA1 → A1). The letter (A, B, C) refers to the recruitment center.
 
-Table 1: We have implemented the reviewers' helpful terminology remarks in
-  Table 1. The Kübler and Birbaumer classification system is included here
-  since there is to the authors' knowledge no agreed upon standardized
-  classification system for BCI user capabilities within the field. Some readers
-  may find the Wolpaw criteria more clear due to its simplicity. This system has
-  now also been explained clearly, since it is the main system used in
-  recruitment for this study according to the inclusion criterion. However,
-  some readers prefer the more granular and potentially more widely used
-  classification presented by Kübler and Birbaumer more helpful. Both systems
-  were also introduced around the same time (2006 and 2008). Hence both systems
-  are included, with Wolpaw's classification as the main system and the
-  Kübler-Birbaumer classification as reference for interested readers or those
-  who are more familiar with this classification. The table's description now
-  clarifies this.
+Table 1:
+  We have implemented the reviewer's helpful terminology remarks in Table 1. The
+  Kübler and Birbaumer classification system is included here, as there is, to
+  the authors' knowledge, no universally agreed-upon standard system within the
+  field for classification of BCI user capabilities. Some readers may find the
+  Wolpaw criteria clearer due to their simplicity. This system has now been
+  explained clearly, as it is the main system used for recruitment in this study
+  according to the predefined inclusion criterion. However, some readers may
+  prefer the more granular and potentially more widely used classification
+  proposed by Kübler and Birbaumer. Both systems were introduced around the same
+  time (2006 and 2008). Hence, both systems are included, with Wolpaw's
+  classification as the main one and the Kübler–Birbaumer classification as a
+  reference for interested readers or for those more familiar with it. The table
+  caption now clarifies this.
 
-Table 2: we have updated the description in Table 1 and specified precise
-  boundaries on visual acuity according to the classification of visual acuity
-  defined by the World Health Organization (2019).
+Table 2:
+  We have updated the description in Table 1 and specified boundaries on visual
+  acuity as defined by the World Health Organization (2019).
 
-Section 2.2
-  * We did indeed define for ourselves a semi-rigid list of questions to ask the
-    participants for assessing their eye movements and vision. These questions
-    are now included in appendix C. Where possible, the assessments obtained
-    from these questions where completed with details from the medical file or
-    an oculomotor assessment provided by the clinician.
+Section 2.2:
+* We did indeed define a semi-rigid list of questions to assess participants'
+  eye movement capabilities and vision. These questions are now included in
+  Appendix C. Where possible, the assessments obtained from these questions were
+  supplemented with details from the medical file or an oculomotor assessment
+  provided by the clinician.
 
-  * The line between minor and major impairment in our earlier assessment of
-    subjects was drawn rather subjectively. We have now reevaluated this using
-    fixed rules: Major impairment implies that the impairment was complete,
-    or the ability on its own prevents or nearly prevents the participant from
-    operating a regular visual oddball BCI as a healthy control subject would,
-    after potential corrections.
-    Minor impairment implies the ability is limited to discomfort or does not on
-    its own strictly prevent the user from operating a visual BCI as a healthy
-    control subject would, after potential corrections. These rules have now
-    been included in the methods section on line TODO. Following these rules,
-    involuntary movements of participants B1 and C3 were reclassified from
-    minor to major.
+* The line between minor and major impairment in our earlier assessment of
+  subjects was drawn rather subjectively. We have now reevaluated this using
+  fixed rules: Major impairment implies that the impairment was complete, or
+  that impairment of this ability alone prevents or hampers the participant from
+  operating a regular visual oddball BCI as a healthy control subject would,
+  after potential visual corrections. Minor impairment implies that the ability
+  is affected or causes discomfort, but does not prevent the user from operating
+  a visual BCI as a healthy control subject would, after potential visual
+  corrections. These rules have now been included in Section 2.2 in the revised
+  manuscript on lines 178-182. Following these rules, involuntary movements of
+  participants B1 and C3 were reclassified from minor to major.
 
-  * The structured questionnaire used for our assessment included age,
-    handedness, sex, exact neuromuscular diagnosis, time of neuromuscular
-    diagnosis, stage of neuromuscular disease if applicable, and ophthalmolocigal
-    diagnosis. These were answered by the participant or the paramedical team.
-    Further details concerning communication, pragmatics and presentation of the
-    participant  were observed by the experimenters or through conversation
-    with the participant or the paramedical team. Other relevant clinical
-    details were obtained from the clinician where possible. This is now clearly
-    stated at the end of section 2.1 and appendix B has been added to provide
-    the questionnaire.
+* The structured questionnaire used for our assessment included age,
+  handedness, sex, exact neuromuscular diagnosis, time of neuromuscular
+  diagnosis, stage of neuromuscular disease if applicable, and ophthalmological
+  diagnosis. These questions were asked by the experimenter(s) and answered by
+  the participant or the paramedical team. Other relevant clinical details were
+  obtained from the clinician where possible. Further details concerning
+  communication, pragmatics, and presentation of the participant were observed
+  by the experimenter(s) or gathered through conversation with the participant
+  or the paramedical team. This is now clearly stated at the end of Section 2.1
+  in the revised manuscript and Appendix B has been added to provide the
+  questionnaire.
 
-  * All Participants wore their corrective lenses during the assessment of eye
-    movements and visual acuity, and during the BCI session. This is clarified
-    in the revised manuscript on line TODO.
+* All participants using corrective lenses wore them during the assessment of
+  eye movements and visual acuity, and throughout the BCI session. This is
+  clarified in the revised manuscript on line 176.
 
 Section 2.3:
+* Section 2.3 has been substantially expanded in the revised manuscript with
+  exact details about the stimulation procedure.
 
-  * Section 2.3 is substantially expanded in the revised manuscript with
-    exact details about the stimulation procedure.
+* The condition order was randomized. This has been indicated in the revised
+  manuscript on line 205.
 
-  * The condition order was indeed randomized. This has been indicated in the
-    revised manuscript on line TODO
+* BCI experiment sessions were carried out either in the hospital, in the
+  rehabilitation clinic, or in a care home. This is now indicated in the revised
+  manuscript on lines 298-300.
 
-  * BCI experiment sessions were carried out either in the hospital, in the
-    rehabilitation clinic or in a care home. This is now indicated in the
-    revised manuscript.
+* Where applicable, participants wore corrective lenses during both the visual
+  assessment and the BCI/eye-tracking task, as clarified in the revised
+  manuscript on line 176. Whether a participant wore corrective glasses or
+  lenses has also been explicitly stated for each participant in the clinical
+  evaluations in Appendix A.
 
-  * Where applicable, participants wore their corrective glasses or lenses both
-    during visual assesment and the BCI/eyetracking task, as was earlier
-    clarified in the revised manuscript on line TODO. Whether a participant wore
-    corrective glasses or lenses has now also explicitly been stated for each
-    participant in the clinical evaluations in Appendix A.
+* We introduced Section 2.5 to integrate elements from Section 2 (Methods) and
+  Section 3 (Results) to clearly state the analyses performed, their relation to
+  the research questions, and their respective outcome variables. All
+  information previously scattered throughout the original manuscript describing
+  specific methods, or methodical clarifications proposed by the reviewers, is
+  now grouped and reported in Section 2 (Methods) in the revised manuscript.
 
-  * We introduced section 2.5 to integrate elements from the methods and results,
-    to state clearly the analyses, their relation to the research questions and
-    their respective outcome variables. All information found throughout the
-    results describing specific methods or clarifications of methods proposed by
-    the reviewer to obtain interpretable outcomes has now been concentrated in
-    Section 2 (Methods).
-
-
-Results:
+## Results
 
 Figure 3:
-  * The suggested graphical changes have been implemented.
-    The caption has been updated  to clarify the presented data and aid in its
-   interpretation.
+* The suggested graphical changes have been implemented. The caption has been
+  updated to clarify the presented data and aid in its interpretation.
 
-  * Figure 4 in the revised manuscript has been added to facilitate direct
-    comparison between the performance in different VSA conditions. We also
-    indicate in the text that all performance evaluations after the results
-    presented in figure 3 are performed using the tLDA decoder.
+* Figure 4 in the revised manuscript has been added to facilitate direct
+  comparison between the performance in different VSA conditions. In the
+  revised manuscript, we also indicate on lines 333-334 that all performance
+  evaluations after the results presented in Figure 3 are performed using the
+  tLDA decoder.
 
-  * Initially, figure 3 showed both single-trial performances and performances
-    achieved when averaging over 5 and 10 trials. The single-trial accuracies
-    were calculated in a different way than those obtained when averaging over
-    trials as indicated in our response on outcome variables. Therefore, we
-    chose to remove them from this figure.
-    The exact procedure to obtain single-trial accuracies and accuracies when
-    averaging over multiple repetitions have now been clarified in section 2.5.2.
-    To replace the information removed from figure TODO, table TODO has been added, which
-    shows the number of repetitions needed to reach 80% accuracy.
+* Initially, Figure 3 in the original manuscript showed both single-trial
+  performances and performances achieved when averaging over 5 and 10 trials.
+  The single-trial accuracies were calculated differently from those obtained
+  when averaging over trials, as indicated in our response on outcome variables.
+  Therefore, we chose to remove them from this figure. The exact procedure to
+  obtain single-trial accuracies and accuracies when averaging over multipl
+  repetitions has now been clarified in Section 2.5.2. To replace the
+  information removed from Figure 3 in the original manuscript, Table 4 has been
+  added to the revised manuscript, showing the number of repetitions needed to
+  reach 80% accuracy.
 
-  * Original figure 4: The motivation and methodology for cross-condition training
-    calibration and decoding has now been expressed as a research question and
-    the motivation is further in the new section 2.5.4.
-    We hypothesize that performance or comfort might be improved if calibration
-    is performed using 	VSA setting when multiple different VSA conditions are
-    performed during BCI operation.
+* Original Figure 4: The motivation and methodology for cross-condition training
+  calibration and decoding have now been expressed as a research question. The
+  motivation is further explained in Section 2.5.4 of the revised manuscript. We
+  hypothesize that performance or comfort might be improved if calibration is
+  performed using the VSA setting when multiple different VSA conditions are
+  performed during BCI operation.
 
-  * Sections 3.1 and 3.2: Comparison of the bootstrapped 95% confidence intervals
-    was used in data interpretation to substantiate statements comparing decoders
-    or conditions. This has now been clarified in section 2.5.2.
+* Sections 3.1 and 3.2: Comparison of the bootstrapped 95% confidence intervals
+  was used in data interpretation to substantiate statements comparing decoders
+  or conditions. This has now been clarified in Section 2.5.2.
 
-Discussion:
+## Discussion
 
-* The second paragraph of section 4 (Discussion) at lines TODO has been added to
-  provide insight into the contribution of this work and its relation to the
-  relevant literature.
+* The paragraph at lines 357-366 in Section 4 (Discussion) in the revised
+  manuscript has been added to the to provide insight into the contribution of
+  this work and its relation to the relevant literature.
 
+l250–263:
+  The WCBLE algorithm used for gaze-independent decoding explicitly relies on
+  jitter estimation and correction to improve gaze-independent decoding. We now
+  properly contextualize its relevance. As part of the answer to the earlier
+  review comment on the relevance of jitter the paragraphs in Section 1
+  (Background) concerning gaze-independent decoding have been expanded in the
+  revised manuscript at lines 87-100. Further context and the relevance of latency
+  and jitter have been added here. In conjunction, the implementation of WCBLE
+  has now been summarized in Section 2.5.3 of the revised manuscript.
 
-l250-263: The WCBLE algorithm used for gaze-independent decoding explicitly
-  relies on jitter estimation and correction to improve gaze-independent decoding.
-  We now properly contextualize the relevance  in the text. As part of answer to
-  the last review comment above the regarding 'Methods' part, the paragraphs in
-  the Background section at lines TODO about decoders for gaze-independence have
-  been expanded with further context and the relevance of latency and jitter.
-  In conjunction, the proper implementation of WCBLE has now been summarized in
-  section 2.5.3.
+Section 4.2:
+  Section 4.2 describing the clinical implications of our work has been
+  restructured. A paragraph at lines 420-429 highlighting the impact of eye
+  motor impairment has been added.
 
-Section 4.2: Section 4.2 describing the clinical implications of our work has
-  been restructured. We added a paragraph at lines TODO highlighting the impact of
-  eye motor impairment has been added.
+l293–297:
+  As mentioned in the Limitations section, we agree that patient feedback on
+  comfort and task load can be gathered using more structured questionnaires. To
+  avoid a lengthy questionnaire, which could weigh on the participants and
+  cause fatigue interfering with the experiment, and due to accessibility and
+  time constraints, we opted for a minimal approach. Participants were polled
+  for their mood and tiredness before and after the experiment. This methodology
+  is now documented in Section 2.1 in the revised manuscript at lines 166-168. A
+  paragraph describing
+  the results has been added to Section 3.1 in the revise manuscript at lines
+  323-326 and in Table 3. Finally, we point to alternative strategies in
+  Section 4.3 in the revised manuscript at lines 461-464.
 
-l293-297: As mentioned in the limitations section, we agree that patient feedback
-  on comfort and task load can be gathered using more structured questionnaires.
-  Due to practical and time constraints encountered while working with the
-  recruited participants, we opted for a very minimal approach. Participants
-  were polled for their mood and tiredness before and after the experiment.
-  This methodology is now documented in the Methods section 2.1 on lines TODO.
-  A paragraph describing the results has been added to 3.1 at lines and a proper
-  overview is presented in table TODO.
-  Finally, we point to alternative strategies in section 4.3 Limitations &
-  recommendations at lines TODO
-
-l310: We fully agree with the reviewer's viewpoint on inclusive language. While
-  we already attempted to use inclusive language, we agree this can be improved.
-  The mentioned examples have been updated, and the entire manuscript was
-  checked and where necessary updated to ensure the use of inclusive and
+l310:
+  We fully agree with the reviewer's viewpoint on inclusive language. While we
+  had already attempted to use inclusive language, we agree this can be
+  improved. The mentioned examples have been updated, and the entire manuscript
+  was checked and updated where necessary to ensure the use of inclusive and
   person-first language.
-
 
 # Reviewer 2
 
 We appreciate the reviewer's positive feedback on the manuscript and have
 implemented the requested adaptations in the revised manuscript.
 
-1. In the revised manuscript, section 2.3 has substantially been expanded with
+1. In the revised manuscript, Section 2.3 has been substantially expanded with
    details on the BCI stimulation procedure.
 
-2. The performance analysis methods have now been stated more clearly in section
+2. The performance analysis methods have now been stated more clearly in Section
    2.5.
 
-3. In appendix D, figures have been added documenting the spatial and temporal
+3. In Appendix D, figures have been added that document the spatial and temporal
    course of the ERPs of each participant for each VSA condition.
-
-TODO update line numbers after all revisions are done
